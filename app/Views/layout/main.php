@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="in">
 
 <!-- Mirrored from flatable.phoenixcoded.net/default/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 11:25:26 GMT -->
 
@@ -18,34 +18,26 @@
     <meta name="description" content="Phoenixcoded">
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
-
     <link rel="icon" href="<?= base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/icon/themify-icons/themify-icons.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/icon/icofont/css/icofont.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/flag-icon/flag-icon.min.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/menu-search/css/component.css">
-
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/dashboard/horizontal-timeline/css/style.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/dashboard/amchart/css/amchart.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/flag-icon/flag-icon.min.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/style.css">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/color/color-1.css" id="color" />
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/linearicons.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/simple-line-icons.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/ionicons.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/jquery.mCustomScrollbar.css">
+    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -639,6 +631,17 @@
 
     <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/classie/classie.js"></script>
 
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/pages/data-table/js/jszip.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/pages/data-table/js/pdfmake.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/pages/data-table/js/vfs_fonts.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
     <script src="<?= base_url(); ?>/assets/bower_components/d3/d3.js"></script>
     <script src="<?= base_url(); ?>/assets/bower_components/rickshaw/rickshaw.js"></script>
 
@@ -658,6 +661,7 @@
     <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
 
     <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/custom-dashboard.js"></script>
+    <script src="<?= base_url(); ?>/assets/pages/data-table/js/data-table-custom.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>/assets/js/script.js"></script>
 
     <script src="<?= base_url(); ?>/assets/js/pcoded.min.js"></script>
