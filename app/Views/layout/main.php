@@ -1,675 +1,261 @@
 <!DOCTYPE html>
-<html lang="in">
-
-<!-- Mirrored from flatable.phoenixcoded.net/default/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 11:25:26 GMT -->
+<html lang="en">
 
 <head>
     <title>Site Administrator - Masjid Al-Hikmah</title>
-
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Phoenixcoded">
-    <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-    <meta name="author" content="Phoenixcoded">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
     <link rel="icon" href="<?= base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/icon/themify-icons/themify-icons.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/icon/icofont/css/icofont.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/flag-icon/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/menu-search/css/component.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/dashboard/horizontal-timeline/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/dashboard/amchart/css/amchart.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/pages/flag-icon/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/color/color-1.css" id="color" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/linearicons.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/simple-line-icons.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/ionicons.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/jquery.mCustomScrollbar.css">
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Icofont -->
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/icofont/icofont.min.css">
+    <!-- Data Table css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/DataTables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/DataTables/css/dataTables.bootstrap.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
+    <script type="text/javascript" src="<?= base_url(); ?>/assets/js/plugins/jquery.min.js"></script>
+
+
+
 </head>
 
-<body>
-
-    <div class="theme-loader">
-        <div class="ball-scale">
-            <div></div>
+<body class="">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
         </div>
     </div>
+    <!-- [ Pre-loader ] End -->
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar menu-light ">
+        <div class="navbar-wrapper  ">
+            <div class="navbar-content scroll-div ">
 
-
-    <div id="pcoded" class="pcoded">
-        <div class="pcoded-overlay-box"></div>
-        <div class="pcoded-container navbar-wrapper">
-            <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
-                <div class="navbar-wrapper">
-                    <div class="navbar-logo">
-                        <a class="mobile-menu" id="mobile-collapse" href="#!">
-                            <i class="ti-menu"></i>
-                        </a>
-                        <a class="mobile-search morphsearch-search" href="#">
-                            <i class="ti-search"></i>
-                        </a>
-                        <a href="index-2.html">
-                            <img class="img-fluid" src="<?= base_url(); ?>/assets/images/logo.png" alt="Theme-Logo" />
-                        </a>
-                        <a class="mobile-options">
-                            <i class="ti-more"></i>
-                        </a>
-                    </div>
-                    <div class="navbar-container container-fluid">
-                        <div>
-                            <ul class="nav-left">
-                                <li>
-                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
-                                </li>
-                                <li>
-                                    <a class="main-search morphsearch-search" href="#">
-
-                                        <i class="ti-search"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!" onclick="javascript:toggleFullScreen()">
-                                        <i class="ti-fullscreen"></i>
-                                    </a>
-                                </li>
-                                <li class="mega-menu-top">
-                                    <a href="#">
-                                        Mega
-                                        <i class="ti-angle-down"></i>
-                                    </a>
-                                    <ul class="show-notification row">
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Popular Links</h6>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="form-elements-component.html">Form Elements</a></li>
-                                                <li><a href="button.html">Buttons</a></li>
-                                                <li><a href="map-google.html">Maps</a></li>
-                                                <li><a href="user-card.html">Contact Cards</a></li>
-                                                <li><a href="user-profile.html">User Information</a></li>
-                                                <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Mailbox</h6>
-                                            <ul class="mega-mailbox">
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-folder"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Data Backup</h5>
-                                                            <small class="text-muted">Store your data</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-headphone-alt"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Support</h5>
-                                                            <small class="text-muted">24-hour support</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-dropbox"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Drop-box</h5>
-                                                            <small class="text-muted">Store large amount of data in one-box only
-                                                            </small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-location-pin"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Location</h5>
-                                                            <small class="text-muted">Find Your Location with ease of use</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Gallery</h6>
-                                            <div class="row m-b-20">
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/01.jpg" alt="Gallery-1">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/02.jpg" alt="Gallery-2">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/03.jpg" alt="Gallery-3">
-                                                </div>
-                                            </div>
-                                            <div class="row m-b-20">
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/04.jpg" alt="Gallery-4">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/05.jpg" alt="Gallery-5">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="<?= base_url(); ?>/assets/images/mega-menu/06.jpg" alt="Gallery-6">
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Contact Us</h6>
-                                            <div class="mega-menu-contact">
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-3 col-form-label">Name</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="text" placeholder="Artisanal kale" id="example-text-input">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-3 col-form-label">Email</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="email" placeholder="Enter your E-mail Id" id="example-search-input">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-3 col-form-label">Contact</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="number" placeholder="+91-9898989898" id="example-search-input">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="exampleTextarea" class="col-3 col-form-label">Message</label>
-                                                    <div class="col-9">
-                                                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="nav-right">
-                                <li class="header-notification lng-dropdown">
-                                    <a href="#" id="dropdown-active-item">
-                                        <i class="flag-icon flag-icon-gb m-r-5"></i> English
-                                    </a>
-                                    <ul class="show-notification">
-                                        <li>
-                                            <a href="#" data-lng="en">
-                                                <i class="flag-icon flag-icon-gb m-r-5"></i> English
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" data-lng="pt">
-                                                <i class="flag-icon flag-icon-pt m-r-5"></i> Portuguese
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" data-lng="fr">
-                                                <i class="flag-icon flag-icon-fr m-r-5"></i> French
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="header-notification">
-                                    <a href="#!">
-                                        <i class="ti-bell"></i>
-                                        <span class="badge">5</span>
-                                    </a>
-                                    <ul class="show-notification">
-                                        <li>
-                                            <h6>Notifications</h6>
-                                            <label class="label label-danger">New</label>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="<?= base_url(); ?>/assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">John Doe</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="<?= base_url(); ?>/assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="<?= base_url(); ?>/assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="header-notification">
-                                    <a href="#!" class="displayChatbox">
-                                        <i class="ti-comments"></i>
-                                        <span class="badge">9</span>
-                                    </a>
-                                </li>
-                                <li class="user-profile header-notification">
-                                    <a href="#!">
-                                        <img src="<?= base_url(); ?>/assets/images/user.png" alt="User-Profile-Image">
-                                        <span>John Doe</span>
-                                        <i class="ti-angle-down"></i>
-                                    </a>
-                                    <ul class="show-notification profile-notification">
-                                        <li>
-                                            <a href="#!">
-                                                <i class="ti-settings"></i> Settings
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="user-profile.html">
-                                                <i class="ti-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="email-inbox.html">
-                                                <i class="ti-email"></i> My Messages
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html">
-                                                <i class="ti-lock"></i> Lock Screen
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#!">
-                                                <i class="ti-layout-sidebar-left"></i> Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <div id="morphsearch" class="morphsearch">
-                                <form class="morphsearch-form">
-                                    <input class="morphsearch-input" type="search" placeholder="Search..." />
-                                    <button class="morphsearch-submit" type="submit">Search</button>
-                                </form>
-                                <div class="morphsearch-content">
-                                    <div class="dummy-column">
-                                        <h2>People</h2>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&amp;d=identicon&amp;r=G" alt="Sara Soueidan" />
-                                            <h3>Sara Soueidan</h3>
-                                        </a>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&amp;d=identicon&amp;r=G" alt="Shaun Dona" />
-                                            <h3>Shaun Dona</h3>
-                                        </a>
-                                    </div>
-                                    <div class="dummy-column">
-                                        <h2>Popular</h2>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="PagePreloadingEffect" />
-                                            <h3>Page Preloading Effect</h3>
-                                        </a>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="DraggableDualViewSlideshow" />
-                                            <h3>Draggable Dual-View Slideshow</h3>
-                                        </a>
-                                    </div>
-                                    <div class="dummy-column">
-                                        <h2>Recent</h2>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="TooltipStylesInspiration" />
-                                            <h3>Tooltip Styles Inspiration</h3>
-                                        </a>
-                                        <a class="dummy-media-object" href="#!">
-                                            <img src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="NotificationStyles" />
-                                            <h3>Notification Styles Inspiration</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
-                            </div>
-
+                <div class="">
+                    <div class="main-menu-header">
+                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+                        <div class="user-details">
+                            <div id="more-details">UX Designer <i class="fa fa-caret-down"></i></div>
                         </div>
                     </div>
-                </div>
-            </nav>
-
-            <div id="sidebar" class="users p-chat-user showChat">
-                <div class="had-container">
-                    <div class="card card_main p-fixed users-main">
-                        <div class="user-box">
-                            <div class="card-block">
-                                <div class="right-icon-control">
-                                    <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
-                                    <div class="form-icon">
-                                        <i class="icofont icofont-search"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-friend-list">
-                                <div class="media userlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Josephin Doe</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe" data-toggle="tooltip" data-placement="left" title="Lary Doe">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u1.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Lary Doe</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-2.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Alice</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="4" data-status="online" data-username="Alia" data-toggle="tooltip" data-placement="left" title="Alia">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u2.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Alia</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="5" data-status="online" data-username="Suzen" data-toggle="tooltip" data-placement="left" title="Suzen">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u3.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Suzen</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="6" data-status="offline" data-username="Michael Scofield" data-toggle="tooltip" data-placement="left" title="Michael Scofield">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-3.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-danger"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Michael Scofield</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="7" data-status="online" data-username="Irina Shayk" data-toggle="tooltip" data-placement="left" title="Irina Shayk">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-4.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Irina Shayk</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="8" data-status="offline" data-username="Sara Tancredi" data-toggle="tooltip" data-placement="left" title="Sara Tancredi">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-5.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-danger"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Sara Tancredi</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="9" data-status="online" data-username="Samon" data-toggle="tooltip" data-placement="left" title="Samon">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Samon</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="10" data-status="online" data-username="Daizy Mendize" data-toggle="tooltip" data-placement="left" title="Daizy Mendize">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u3.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Daizy Mendize</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="11" data-status="offline" data-username="Loren Scofield" data-toggle="tooltip" data-placement="left" title="Loren Scofield">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-3.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-danger"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Loren Scofield</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="12" data-status="online" data-username="Shayk" data-toggle="tooltip" data-placement="left" title="Shayk">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-4.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Shayk</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="13" data-status="offline" data-username="Sara" data-toggle="tooltip" data-placement="left" title="Sara">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u3.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-danger"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Sara</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="14" data-status="online" data-username="Doe" data-toggle="tooltip" data-placement="left" title="Doe">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Doe</div>
-                                    </div>
-                                </div>
-                                <div class="media userlist-box" data-id="15" data-status="online" data-username="Lary" data-toggle="tooltip" data-placement="left" title="Lary">
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="<?= base_url(); ?>/assets/images/task/task-u1.jpg" alt="Generic placeholder image">
-                                        <div class="live-status bg-success"></div>
-                                    </a>
-                                    <div class="media-body">
-                                        <div class="f-13 chat-header">Lary</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="collapse" id="nav-user-link">
+                        <ul class="list-unstyled">
+                            <li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>View Profile</a></li>
+                            <li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Settings</a></li>
+                            <li class="list-group-item"><a href="auth-normal-sign-in.html"><i class="feather icon-log-out m-r-5"></i>Logout</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-            <div class="showChat_inner">
-                <div class="media chat-inner-header">
-                    <a class="back_chatBox">
-                        <i class="icofont icofont-rounded-left"></i> Josephin Doe
-                    </a>
-                </div>
-                <div class="media chat-messages">
-                    <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-circle m-t-5" src="<?= base_url(); ?>/assets/images/avatar-1.png" alt="Generic placeholder image">
-                    </a>
-                    <div class="media-body chat-menu-content">
-                        <div class="">
-                            <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
-                            <p class="chat-time">8:20 a.m.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="media chat-messages">
-                    <div class="media-body chat-menu-reply">
-                        <div class="">
-                            <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
-                            <p class="chat-time">8:20 a.m.</p>
-                        </div>
-                    </div>
-                    <div class="media-right photo-table">
-                        <a href="#!">
-                            <img class="media-object img-circle m-t-5" src="<?= base_url(); ?>/assets/images/avatar-2.png" alt="Generic placeholder image">
-                        </a>
-                    </div>
-                </div>
-                <div class="chat-reply-box p-b-20">
-                    <div class="right-icon-control">
-                        <input type="text" class="form-control search-text" placeholder="Share Your Thoughts">
-                        <div class="form-icon">
-                            <i class="icofont icofont-paper-plane"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pcoded-main-container">
-                <div class="pcoded-wrapper">
-                    <?= $this->rendersection('menu'); ?>
-                    <div class="pcoded-content">
-                        <div class="pcoded-inner-content">
-                            <div class="main-body">
-                                <?= $this->rendersection('isi'); ?>
-                                <div id="styleSelector">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?= $this->rendersection('menu'); ?>
             </div>
         </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
+
+
+        <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+            <a href="#!" class="b-brand">
+                <!-- ========   change your logo hear   ============ -->
+                <img src="<?= base_url(); ?>/assets/images/logo.png" alt="" class="logo">
+                <img src="<?= base_url(); ?>/assets/images/logo-icon.png" alt="" class="logo-thumb">
+            </a>
+            <a href="#!" class="mob-toggler">
+                <i class="feather icon-more-vertical"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#"><i class="feather icon-search"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="icon feather icon-bell"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Notifications</h6>
+                                <div class="float-right">
+                                    <a href="#!" class="m-r-10">mark as read</a>
+                                    <a href="#!">clear all</a>
+                                </div>
+                            </div>
+                            <ul class="noti-body">
+                                <li class="n-title">
+                                    <p class="m-b-0">NEW</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
+                                            <p>New ticket Added</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="n-title">
+                                    <p class="m-b-0">EARLIER</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
+                                            <p>currently login</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="noti-footer">
+                                <a href="#!">show all</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown drp-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="feather icon-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-notification">
+                            <div class="pro-head">
+                                <img src="<?= base_url(); ?>/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                                <span>John Doe</span>
+                                <a href="auth-signin.html" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </div>
+                            <ul class="pro-body">
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
+                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </header>
+    <!-- [ Header ] end -->
+
+
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+
+            <!-- [ breadcrumb ] end -->
+            <?= $this->rendersection('isi'); ?>
+            <!-- [ Main Content ] end -->
+        </div>
     </div>
+    <!-- [ Main Content ] end -->
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="<?= base_url(); ?>/assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="<?= base_url(); ?>/assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="<?= base_url(); ?>/assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="<?= base_url(); ?>/assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="<?= base_url(); ?>/assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- jquery -->
+    <script type="text/javascript" src="<?= base_url(); ?>/assets/js/plugins/jquery.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/js/plugins/jquery-ui.min.js"></script>
 
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="<?= base_url(); ?>/assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="<?= base_url(); ?>/assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="<?= base_url(); ?>/assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="<?= base_url(); ?>/assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="<?= base_url(); ?>/assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/tether/dist/js/tether.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/classie/classie.js"></script>
-
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/pages/data-table/js/jszip.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/pages/data-table/js/pdfmake.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/pages/data-table/js/vfs_fonts.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
-    <script src="<?= base_url(); ?>/assets/bower_components/d3/d3.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/rickshaw/rickshaw.js"></script>
-
-    <script src="<?= base_url(); ?>/assets/bower_components/raphael/raphael.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/bower_components/morris.js/morris.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/horizontal-timeline/js/main.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/amchart/js/amcharts.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/amchart/js/serial.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/amchart/js/light.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/amchart/js/custom-amchart.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/i18next/i18next.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
-
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/pages/dashboard/custom-dashboard.js"></script>
-    <script src="<?= base_url(); ?>/assets/pages/data-table/js/data-table-custom.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/js/script.js"></script>
-
+    <!-- Required Js -->
+    <script src="<?= base_url(); ?>/assets/js/vendor-all.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/js/ripple.js"></script>
     <script src="<?= base_url(); ?>/assets/js/pcoded.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/js/demo-12.js"></script>
-    <script src="<?= base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/js/jquery.mousewheel.min.js"></script>
+
+    <!-- Data Table Required -->
+    <script type="text/javascript" src="<?= base_url(); ?>/assets/DataTables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/assets/DataTables/js/jquery.dataTables.min.js"></script>
+
+    <!-- custom-chart js -->
+    <script src="<?= base_url(); ?>/assets/js/pages/dashboard-main.js"></script>
 </body>
 
-<!-- Mirrored from flatable.phoenixcoded.net/default/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 11:30:25 GMT -->
-
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.data').DataTable();
+    });
+</script>
