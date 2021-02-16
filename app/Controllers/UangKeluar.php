@@ -12,7 +12,7 @@ class UangKeluar extends BaseController
         $model = new UangKeluar_model();
         $model1 = new JenisPengeluaran_model();
         $data['cashout'] = $model->getCashOut();
-        $data['jenispengeluaran'] = $model->getJenisPengeluaran()->getresultArray();
+        $data['jenispengeluaran'] = $model1->getJenisPengeluaran()->getresultArray();
         echo view('v_uangkeluar', $data);
     }
     public function save()

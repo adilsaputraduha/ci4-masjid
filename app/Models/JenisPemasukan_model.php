@@ -18,12 +18,12 @@ class JenisPemasukan_model extends Model
     }
     public function updateJenisPemasukan($data, $id)
     {
-        $query = $this->db->table('jenis_pemasukan')->update($data, array('id' => $id));
+        $query = $this->db->table('jenis_pemasukan')->update($data, array('idp' => $id));
         return $query;
     }
     public function deleteJenisPemasukan($id)
     {
-        $query = $this->db->table('jenis_pemasukan')->delete(array('id' => $id));
+        $query = $this->db->table('jenis_pemasukan')->delete(array('idp' => $id));
         return $query;
     }
 }

@@ -9,7 +9,7 @@ class UangKeluar_model extends Model
     public function getCashOut()
     {
         return  $this->db->table('cash_out')
-            ->join('jenis_pengeluaran', 'jenis_pengeluaran.id = cash_out.jenis')
+            ->join('jenis_pengeluaran', 'jenis_pengeluaran.idp = cash_out.jenis')
             ->get()->getresultArray();
     }
     public function saveCashOut($data)

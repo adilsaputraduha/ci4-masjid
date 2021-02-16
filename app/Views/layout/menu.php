@@ -20,10 +20,22 @@
     <li class="nav-item pcoded-hasmenu">
         <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-list"></i></span><span class="pcoded-mtext">Transaksi</span></a>
         <ul class="pcoded-submenu">
+            <li><a href="/pembayarandonatur">Pembayaran Donatur</a></li>
             <li><a href="/uangmasuk">Uang Masuk</a></li>
             <li><a href="/uangkeluar">Uang Keluar</a></li>
         </ul>
     </li>
+    <li class="nav-item pcoded-hasmenu">
+        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-tasks"></i></span><span class="pcoded-mtext">Laporan</span></a>
+        <ul class="pcoded-submenu">
+            <li><a href="/pembayarandonatur">Pembayaran Donatur</a></li>
+            <li><a href="/uangmasuk">Uang Masuk</a></li>
+            <li><a href="/uangkeluar">Uang Keluar</a></li>
+        </ul>
+    </li>
+
+
+
     <li class="nav-item pcoded-menu-caption">
         <label>Pengaturan</label>
     </li>
@@ -32,9 +44,19 @@
 
     <?php if (in_groups('super-admin')) : ?>
         <li class="nav-item">
-            <a href="/home" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-users"></i></span><span class="pcoded-mtext">Pengguna</span></a>
+            <a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-log-out"></i></span><span class="pcoded-mtext">Pengguna</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-log-out"></i></span><span class="pcoded-mtext">Info Masjid</span></a>
         </li>
     <?php endif; ?>
+
+    <li class="nav-item">
+        <a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Ganti Password</span></a>
+    </li>
+    <li class="nav-item">
+        <a href="<?= base_url('logout'); ?>" class="nav-link "><span class="pcoded-micon"><i class="feather icon-log-out"></i></span><span class="pcoded-mtext">Logout</span></a>
+    </li>
 </ul>
 
 <?= $this->endSection(); ?>

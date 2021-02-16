@@ -52,8 +52,8 @@
                                 <td> <?= $no; ?></td>
                                 <td> <?= $row['nama']; ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['idp']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['idp']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -18,12 +18,12 @@ class JenisPengeluaran_model extends Model
     }
     public function updateJenisPengeluaran($data, $id)
     {
-        $query = $this->db->table('jenis_pengeluaran')->update($data, array('id' => $id));
+        $query = $this->db->table('jenis_pengeluaran')->update($data, array('idp' => $id));
         return $query;
     }
     public function deleteJenisPengeluaran($id)
     {
-        $query = $this->db->table('jenis_pengeluaran')->delete(array('id' => $id));
+        $query = $this->db->table('jenis_pengeluaran')->delete(array('idp' => $id));
         return $query;
     }
 }

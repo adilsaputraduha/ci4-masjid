@@ -124,23 +124,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-12 mb-2">
                         <label>Tanggal *</label>
                         <input type="date" class="form-control tanggal" id="tanggal" name="tanggal" required autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label>Jenis Uang Masuk</label>
+                        <label>Jenis Uang Masuk *</label>
                         <select name="jenispemasukan" class="form-control jenispemasukan" required>
                             <?php foreach ($jenispemasukan as $row) : ?>
                                 <option value="<?= $row['idp']; ?>"><?= $row['nama']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label>Keterangan *</label>
-                        <input type="text" class="form-control keterangan" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" required autocomplete="off">
+                    <div class="col-md-12 mb-2">
+                        <label>Keterangan</label>
+                        <input type="text" class="form-control keterangan" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" autocomplete="off">
                     </div>
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-12 mb-2">
                         <label>Jumlah *</label>
                         <input type="text" class="form-control jumlah" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>

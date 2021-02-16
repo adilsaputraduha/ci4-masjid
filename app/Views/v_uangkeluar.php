@@ -58,7 +58,7 @@
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td> <?= $row['keterangan']; ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispengeluaran="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
                                     <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
@@ -83,23 +83,23 @@
                 </div>
                 <div class="modal-body">
                     <div class="col-md-12 mb-2">
-                        <label>Tanggal</label>
+                        <label>Tanggal *</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" required autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label>Jenis Uang Keluar</label>
-                        <select name="jenispengeluaran" class="form-control">
+                        <label>Jenis Uang Keluar *</label>
+                        <select name="jenispengeluaran" class="form-control" required>
                             <?php foreach ($jenispengeluaran as $row) : ?>
-                                <option value="<?= $row['id']; ?>"><?= $row['nama']; ?></option>
+                                <option value="<?= $row['idp']; ?>"><?= $row['nama']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="col-md-12 mb-2">
                         <label>Keterangan</label>
-                        <input type="text" class="form-control" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" required autocomplete="off">
+                        <input type="text" class="form-control" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label>Jumlah</label>
+                        <label>Jumlah *</label>
                         <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
                 </div>
@@ -124,23 +124,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-12 mb-2">
                         <label>Tanggal *</label>
                         <input type="date" class="form-control tanggal" id="tanggal" name="tanggal" required autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label>Jenis Uang Keluar</label>
-                        <select name="jenispengeluaran" class="form-control jenispengeluaran" id="jenispengeluaran">
+                        <label>Jenis Uang Keluar *</label>
+                        <select name="jenispengeluaran" class="form-control jenispengeluaran" id="jenispengeluaran" required>
                             <?php foreach ($jenispengeluaran as $row) : ?>
-                                <option value="<?= $row['id']; ?>"><?= $row['nama']; ?></option>
+                                <option value="<?= $row['idp']; ?>"><?= $row['nama']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label>Keterangan *</label>
-                        <input type="text" class="form-control keterangan" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" required autocomplete="off">
+                    <div class="col-md-12 mb-2">
+                        <label>Keterangan</label>
+                        <input type="text" class="form-control keterangan" placeholder="Masukan Keterangan" id="keterangan" name="keterangan" autocomplete="off">
                     </div>
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-12 mb-2">
                         <label>Jumlah *</label>
                         <input type="text" class="form-control jumlah" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
@@ -192,11 +192,12 @@
     $('.btn-update').on('click', function() {
         const id = $(this).data('id');
         const tanggal = $(this).data('tanggal');
-        const tanggal = $(this).data('tanggal');
+        const jenispengeluaran = $(this).data('jenispengeluaran');
         const ket = $(this).data('keterangan');
         const jumlah = $(this).data('jumlah');
         $('.id').val(id);
         $('.tanggal').val(tanggal);
+        $('.jenispengeluaran').val(jenispengeluaran);
         $('.keterangan').val(ket);
         $('.jumlah').val(jumlah);
         $('#updateModal').modal('show');
