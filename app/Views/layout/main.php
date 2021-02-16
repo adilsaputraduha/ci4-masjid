@@ -21,8 +21,9 @@
     <!-- Icofont -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/icofont/icofont.min.css">
     <!-- Data Table css -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/DataTables/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/DataTables/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
     <script type="text/javascript" src="<?= base_url(); ?>/assets/js/plugins/jquery.min.js"></script>
@@ -244,8 +245,16 @@
     <script src="<?= base_url(); ?>/assets/js/pcoded.min.js"></script>
 
     <!-- Data Table Required -->
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/DataTables/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>/assets/DataTables/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/data-table/js/jszip.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/data-table/js/pdfmake.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/data-table/js/vfs_fonts.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
     <!-- custom-chart js -->
     <script src="<?= base_url(); ?>/assets/js/pages/dashboard-main.js"></script>
@@ -253,8 +262,8 @@
 
 </html>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.data').DataTable();
+<script>
+    $('#datatable').DataTable({
+        responsive: true
     });
 </script>

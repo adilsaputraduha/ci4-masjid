@@ -37,7 +37,7 @@
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table id="datatable" class="table table-striped">
                     <thead>
                         <tr>
                             <th width="10%">No.</th>

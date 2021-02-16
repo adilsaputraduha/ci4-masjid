@@ -12,8 +12,9 @@
     <li class="nav-item pcoded-hasmenu">
         <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-layout"></i></span><span class="pcoded-mtext">Master</span></a>
         <ul class="pcoded-submenu">
-            <li><a href="layout-vertical.html">Vertical</a></li>
-            <li><a href="layout-horizontal.html">Horizontal</a></li>
+            <li><a href="/jenispemasukan">Jenis Pemasukan</a></li>
+            <li><a href="/jenispengeluaran">Jenis Pengeluaran</a></li>
+            <li><a href="/donatur">Donatur</a></li>
         </ul>
     </li>
     <li class="nav-item pcoded-hasmenu">
