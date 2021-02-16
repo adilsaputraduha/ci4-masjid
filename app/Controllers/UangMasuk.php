@@ -36,7 +36,7 @@ class UangMasuk extends BaseController
         );
         $model->updateCashIn($data, $id);
         session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-        return redirect()->to('/cashin');
+        return redirect()->to('/uangmasuk');
     }
 
     public function delete()
@@ -45,6 +45,6 @@ class UangMasuk extends BaseController
         $id = $this->request->getPost('id');
         $model->deleteCashIn($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-        return redirect()->to('/cashin');
+        return redirect()->to('/uangmasuk');
     }
 }

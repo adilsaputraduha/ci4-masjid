@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <title>Site Administrator - Masjid Al-Hikmah</title>
@@ -46,16 +46,16 @@
 
                 <div class="">
                     <div class="main-menu-header">
-                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
-                        <div class="user-details">
-                            <div id="more-details">UX Designer <i class="fa fa-caret-down"></i></div>
+                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/userimage/<?= user()->user_image; ?>" alt="User-Image">
+                        <div class="user-details mt-1">
+                            <div id="more-details"><?= user()->fullname; ?> <i class="fa fa-caret-down"></i></div>
                         </div>
                     </div>
                     <div class="collapse" id="nav-user-link">
                         <ul class="list-unstyled">
-                            <li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>View Profile</a></li>
-                            <li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Settings</a></li>
-                            <li class="list-group-item"><a href="auth-normal-sign-in.html"><i class="feather icon-log-out m-r-5"></i>Logout</a></li>
+                            <li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>Lihat Profil</a></li>
+                            <li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Pengaturan</a></li>
+                            <li class="list-group-item"><a href="<?= base_url('logout'); ?>"><i class="feather icon-log-out m-r-5"></i>Keluar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -154,16 +154,15 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
-                                <img src="<?= base_url(); ?>/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
-                                <span>John Doe</span>
-                                <a href="auth-signin.html" class="dud-logout" title="Logout">
+                                <img src="<?= base_url(); ?>/assets/images/userimage/<?= user()->user_image; ?>" class="img-radius" alt="User-Profile-Image">
+                                <span><?= user()->fullname; ?></span>
+                                <a href="<?= base_url('logout'); ?>" class="dud-logout" title="Logout">
                                     <i class="feather icon-log-out"></i>
                                 </a>
                             </div>
                             <ul class="pro-body">
-                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profil</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> Pesan Saya</a></li>
                             </ul>
                         </div>
                     </div>

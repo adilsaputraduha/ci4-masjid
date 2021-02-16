@@ -58,7 +58,6 @@
                                 <td style="text-align: center;">
                                     <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
                                     <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                    <!-- <a href="#" class="btn-mini btn-warning btn-detail" data-id="<?= $row['id']; ?>"><i class="icofont icofont-search-alt-1"></i></a> -->
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -95,15 +94,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="cashin/update" enctype="">
+<form method="POST" action="/uangmasuk/update" enctype="">
     <?= csrf_field(); ?>
     <div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -125,20 +124,20 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label>Jumlah *</label>
-                        <input type="text" class="form-control jumlah" pattern="[0-9]" placeholder="Masukan Jumlah" id="jumlah" name="jumlah" required autocomplete="off">
+                        <input type="text" class="form-control jumlah" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <button type="button" class="btn btn-default btn-sm waves-effect " data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-light ">Edit</button>
+                    <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Edit</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="cashin/delete" enctype="">
+<form method="POST" action="/uangmasuk/delete" enctype="">
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -157,8 +156,8 @@
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <button type="button" class="btn btn-default btn-sm waves-effect " data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-light ">Yakin</button>
+                    <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Yakin</button>
                 </div>
             </div>
         </div>

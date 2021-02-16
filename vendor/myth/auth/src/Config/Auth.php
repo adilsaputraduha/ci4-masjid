@@ -1,4 +1,6 @@
-<?php namespace Myth\Auth\Config;
+<?php
+
+namespace Myth\Auth\Config;
 
 use CodeIgniter\Config\BaseConfig;
 use Myth\Auth\Authentication\LocalAuthenticator;
@@ -27,7 +29,9 @@ class Auth extends BaseConfig
     //--------------------------------------------------------------------
 
     public $views = [
-        'login' => 'Myth\Auth\Views\login',
+        // 'login' => 'Myth\Auth\Views\login',
+        // 'register' => 'Myth\Auth\Views\register',
+        'login' => '\App\Views\v_login',
         'register' => 'Myth\Auth\Views\register',
         'forgot' => 'Myth\Auth\Views\forgot',
         'reset' => 'Myth\Auth\Views\reset',
@@ -96,7 +100,7 @@ class Auth extends BaseConfig
     //  To disable similarity checking set the value to 0.
     //      public $maxSimilarity = 0;
     //
-    public $maxSimilarity = 50;
+    public $maxSimilarity = 0;
 
     //--------------------------------------------------------------------
     // Allow User Registration
@@ -113,7 +117,8 @@ class Auth extends BaseConfig
     // When enabled, every registered user will receive an email message
     // with a special link he have to confirm to activate his account.
     //
-    public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+    // public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+    public $requireActivation = false;
 
     //--------------------------------------------------------------------
     // Allow to reset password via email
@@ -132,7 +137,7 @@ class Auth extends BaseConfig
     // you might not want the extra risk associated with this cookie-based
     // solution.
     //
-    public $allowRemembering = false;
+    public $allowRemembering = true;
 
     //--------------------------------------------------------------------
     // Remember Length
@@ -249,6 +254,4 @@ class Auth extends BaseConfig
     // in seconds.
     //
     public $resetTime = 3600;
-
-
 }
