@@ -8,8 +8,9 @@ class UangMasuk_model extends Model
 {
     public function getCashIn()
     {
-        $bulder = $this->db->table('cash_in');
-        return $bulder->get();
+        return  $this->db->table('cash_in')
+            ->join('jenis_pemasukan', 'jenis_pemasukan.idp = cash_in.jenis')
+            ->get()->getresultArray();
     }
     public function saveCashIn($data)
     {

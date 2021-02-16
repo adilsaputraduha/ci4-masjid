@@ -40,10 +40,11 @@
                 <table id="datatable" class="table table-striped">
                     <thead>
                         <tr>
-                            <th width="10%">No.</th>
+                            <th width="8%">No.</th>
                             <th>Tanggal</th>
-                            <th>Keterangan</th>
+                            <th>Jenis</th>
                             <th>Jumlah</th>
+                            <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -51,12 +52,13 @@
                         <?php $no = 0;
                         foreach ($cashin as $row) : $no++ ?>
                             <tr>
-                                <td width="10%"> <?= $no; ?></td>
+                                <td width="8%"> <?= $no; ?></td>
                                 <td> <?= $row['tanggal']; ?></td>
-                                <td> <?= $row['keterangan']; ?></td>
+                                <td> <?= $row['nama']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+                                <td> <?= $row['keterangan']; ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispemasukan="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
                                     <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
@@ -83,6 +85,14 @@
                     <div class="col-md-12 mb-2">
                         <label>Tanggal</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" required autocomplete="off">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label>Jenis Uang Masuk</label>
+                        <select name="jenispemasukan" class="form-control" required>
+                            <?php foreach ($jenispemasukan as $row) : ?>
+                                <option value="<?= $row['idp']; ?>"><?= $row['nama']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="col-md-12 mb-2">
                         <label>Keterangan</label>
@@ -117,6 +127,14 @@
                     <div class="col-md-12 mb-3">
                         <label>Tanggal *</label>
                         <input type="date" class="form-control tanggal" id="tanggal" name="tanggal" required autocomplete="off">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label>Jenis Uang Masuk</label>
+                        <select name="jenispemasukan" class="form-control jenispemasukan" required>
+                            <?php foreach ($jenispemasukan as $row) : ?>
+                                <option value="<?= $row['idp']; ?>"><?= $row['nama']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label>Keterangan *</label>
@@ -174,10 +192,12 @@
     $('.btn-update').on('click', function() {
         const id = $(this).data('id');
         const tanggal = $(this).data('tanggal');
+        const jenispemasukan = $(this).data('jenispemasukan');
         const ket = $(this).data('keterangan');
         const jumlah = $(this).data('jumlah');
         $('.id').val(id);
         $('.tanggal').val(tanggal);
+        $('.jenispemasukan').val(jenispemasukan);
         $('.keterangan').val(ket);
         $('.jumlah').val(jumlah);
         $('#updateModal').modal('show');

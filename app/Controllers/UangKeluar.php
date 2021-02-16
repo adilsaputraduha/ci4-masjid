@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\UangKeluar_model;
+use App\Models\JenisPengeluaran_model;
 
 class UangKeluar extends BaseController
 {
     public function index()
     {
         $model = new UangKeluar_model();
-        $data['cashout'] = $model->getCashOut()->getresultArray();
+        $model1 = new JenisPengeluaran_model();
+        $data['cashout'] = $model->getCashOut();
+        $data['jenispengeluaran'] = $model->getJenisPengeluaran()->getresultArray();
         echo view('v_uangkeluar', $data);
     }
     public function save()
@@ -17,6 +20,7 @@ class UangKeluar extends BaseController
         $model = new UangKeluar_model();
         $data = array(
             'tanggal' => $this->request->getPost('tanggal'),
+            'jenis' => $this->request->getPost('jenispengeluaran'),
             'keterangan' => $this->request->getPost('keterangan'),
             'jumlah' => $this->request->getPost('jumlah')
         );
@@ -31,6 +35,7 @@ class UangKeluar extends BaseController
         $id = $this->request->getPost('id');
         $data = array(
             'tanggal' => $this->request->getPost('tanggal'),
+            'jenis' => $this->request->getPost('jenispengeluaran'),
             'keterangan' => $this->request->getPost('keterangan'),
             'jumlah' => $this->request->getPost('jumlah')
         );
