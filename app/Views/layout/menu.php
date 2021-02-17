@@ -28,7 +28,7 @@
     <li class="nav-item pcoded-hasmenu">
         <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-tasks"></i></span><span class="pcoded-mtext">Laporan</span></a>
         <ul class="pcoded-submenu">
-            <li><a href="/pembayarandonatur">Pembayaran Donatur</a></li>
+            <li><a href="#">Laporan Keuangan</a></li>
             <li><a href="/uangmasuk">Uang Masuk</a></li>
             <li><a href="/uangkeluar">Uang Keluar</a></li>
         </ul>
