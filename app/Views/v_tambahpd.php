@@ -12,7 +12,7 @@
                 </div>
                 <ul class="breadcrumb float-right">
                     <li class="breadcrumb-item"><a href="/home"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">Master</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
                     <li class="breadcrumb-item"><a href="#">Pembayaran Donatur</a></li>
                 </ul>
             </div>
@@ -89,7 +89,7 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="jumlah" name="jumlah" required>
                         <div class="input-group-append">
-                            <button class="btn btn-success ml-2" type="button">Ok</button>
+                            <button class="btn btn-success ml-2" type="button" onclick="tambah()">Ok</button>
                         </div>
                     </div>
                 </div>
