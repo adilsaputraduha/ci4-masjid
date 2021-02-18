@@ -61,6 +61,45 @@
     </div>
 </div>
 
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Bulan</label>
+                    <div class="input-group mb-3">
+                        <select name="bulan" id="bulan" class="form-control" required>
+                            <option value="1">Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                            <option value="4">April</option>
+                            <option value="5">Mei</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">Agustus</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Jumlah</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="jumlah" name="jumlah" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary ml-2" type="button" data-toggle="modal" data-target="#cariDonatur">Ok</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="col-xl-12">
     <div class="card">
         <div class="card-body table-border-style">
@@ -84,7 +123,6 @@
                                 <td> <?= $row['alamat']; ?></td>
                                 <td> <?= $row['nohp']; ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-nohp="<?= $row['nohp']; ?>"><i class="icofont icofont-ui-edit"></i></a>
                                     <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
@@ -139,6 +177,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     $('.btn-pilih').on('click', function() {

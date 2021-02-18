@@ -44,6 +44,7 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>No. Hp</th>
+                            <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -55,8 +56,9 @@
                                 <td> <?= $row['nama']; ?></td>
                                 <td> <?= $row['alamat']; ?></td>
                                 <td> <?= $row['nohp']; ?></td>
+                                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-nohp="<?= $row['nohp']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-nohp="<?= $row['nohp']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
                                     <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
@@ -86,11 +88,15 @@
                     </div>
                     <div class="col-md-12 mb-2">
                         <label>Alamat *</label>
-                        <input type="text" class="form-control" placeholder="Masukan Alamat" id="alamat" name="keterangan" required autocomplete="off">
+                        <input type="text" class="form-control" placeholder="Masukan Alamat" id="alamat" name="alamat" required autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label>No. Hp *</label>
                         <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" placeholder="Masukan No. Hp" id="nohp" name="nohp" required autocomplete="off">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label>Jumlah *</label>
+                        <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah Uang" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -125,6 +131,10 @@
                     <div class="col-md-12 mb-3">
                         <label>No. Hp *</label>
                         <input type="text" class="form-control nohp" onkeypress="return hanyaAngka(event)" placeholder="Masukan No. Hp" id="nohp" name="nohp" required autocomplete="off">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label>Jumlah</label>
+                        <input type="text" class="form-control jumlah" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah Uang" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -177,10 +187,12 @@
         const nama = $(this).data('nama');
         const alamat = $(this).data('alamat');
         const nohp = $(this).data('nohp');
+        const jumlah = $(this).data('jumlah');
         $('.id').val(id);
         $('.nama').val(nama);
         $('.alamat').val(alamat);
         $('.nohp').val(nohp);
+        $('.jumlah').val(jumlah);
         $('#updateModal').modal('show');
     });
 

@@ -18,7 +18,8 @@ class Donatur extends BaseController
         $data = array(
             'nama' => $this->request->getPost('nama'),
             'alamat' => $this->request->getPost('alamat'),
-            'nohp' => $this->request->getPost('nohp')
+            'nohp' => $this->request->getPost('nohp'),
+            'jumlah' => $this->request->getPost('jumlah')
         );
         $model->saveDonatur($data);
         session()->setFlashdata('pesan', 'Data berhasil disimpan.');
@@ -32,7 +33,8 @@ class Donatur extends BaseController
         $data = array(
             'nama' => $this->request->getPost('nama'),
             'alamat' => $this->request->getPost('alamat'),
-            'nohp' => $this->request->getPost('nohp')
+            'nohp' => $this->request->getPost('nohp'),
+            'jumlah' => $this->request->getPost('jumlah')
         );
         $model->updateDonatur($data, $id);
         session()->setFlashdata('pesan', 'Data berhasil diupdate.');
