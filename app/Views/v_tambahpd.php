@@ -89,19 +89,12 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="jumlah" name="jumlah" required>
                         <div class="input-group-append">
-                            <button class="btn btn-primary ml-2" type="button" data-toggle="modal" data-target="#cariDonatur">Ok</button>
+                            <button class="btn btn-success ml-2" type="button">Ok</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="col-xl-12">
-    <div class="card">
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -130,7 +123,11 @@
                     </tbody>
                 </table>
             </div>
+            <hr>
+            <button type="button" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-danger ml-1">Batal</button>
         </div>
+
     </div>
 </div>
 
@@ -150,7 +147,7 @@
                             <th width="10%">No.</th>
                             <th>Nama</th>
                             <th>Alamat</th>
-                            <th>No. Hp</th>
+                            <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -161,9 +158,9 @@
                                 <td> <?= $no; ?></td>
                                 <td> <?= $row['nama']; ?></td>
                                 <td> <?= $row['alamat']; ?></td>
-                                <td> <?= $row['nohp']; ?></td>
+                                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
+                                    <a href="#" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -184,9 +181,11 @@
         const id = $(this).data('id');
         const nama = $(this).data('nama');
         const alamat = $(this).data('alamat');
+        const jumlah = $(this).data('jumlah');
         $('#id').val(id);
         $('#nama').val(nama);
         $('#alamat').val(alamat);
+        $('#jumlah').val(jumlah);
         $('#cariDonatur').modal('hide');
     });
 </script>
