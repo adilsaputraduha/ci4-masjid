@@ -41,7 +41,7 @@
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
-                            <th>Tanggal</th>
+                            <th>Tanggall</th>
                             <th>Donatur</th>
                             <th>Aksi</th>
                         </tr>
