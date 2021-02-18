@@ -37,27 +37,24 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <form>
-                        <label>Nama Donatur</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="nama" name="nama" readonly required>
-                            <div class="input-group-append">
-                                <button class="btn btn-primary ml-2" type="button" data-toggle="modal" data-target="#cariDonatur">Cari Data</button>
-                            </div>
+                    <input type="hidden" id="id" name="id">
+                    <label>Nama Donatur</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="nama" name="nama" readonly required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary ml-2" type="button" data-toggle="modal" data-target="#cariDonatur">Cari Data</button>
                         </div>
-                        <div class="form-group">
-                            <label>Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <form>
-                        <div class="form-group">
-                            <label>Alamat Donatur</label>
-                            <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required></textarea>
-                        </div>
-                    </form>
+                    <label>Alamat Donatur</label>
+                    <div class="input-group">
+                        <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required></textarea>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,7 +65,7 @@
     <div class="card">
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table id="datatable" class="table table-striped">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
@@ -98,6 +95,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="cariDonatur" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -141,5 +139,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.btn-pilih').on('click', function() {
+        const id = $(this).data('id');
+        const nama = $(this).data('nama');
+        const alamat = $(this).data('alamat');
+        $('#id').val(id);
+        $('#nama').val(nama);
+        $('#alamat').val(alamat);
+        $('#cariDonatur').modal('hide');
+    });
+</script>
 
 <?= $this->endSection(); ?>
