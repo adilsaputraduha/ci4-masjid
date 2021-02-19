@@ -55,7 +55,7 @@
                                 <td> <?= $row['alamat']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="/pembayarandonatur/tambah" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
+                                    <a href="/pembayarandonatur/tambah/<?= $row['id']; ?>" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

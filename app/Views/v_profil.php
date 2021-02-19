@@ -39,23 +39,24 @@
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm">
-                        <label>Email *</label>
+                        <label>Email</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control bg-light" value="<?= user()->email; ?>" id="email" name="email" required>
+                            <input type="text" class="form-control" readonly value="<?= user()->email; ?>" id="email" name="email" required>
                         </div>
-                        <label>Username *</label>
+                        <label>Username</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control bg-light" value="<?= user()->username; ?>" id="username" name="username" required>
+                            <input type="text" class="form-control" readonly value="<?= user()->username; ?>" id="username" name="username" required>
                         </div>
-                        <label>Nama Lengkap *</label>
+                        <label>Nama Lengkap</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control bg-light" value="<?= user()->fullname; ?>" id="fullname" name="fullname" required>
+                            <input type="text" class="form-control" value="<?= user()->fullname; ?>" id="fullname" name="fullname" required>
                         </div>
-                        <label>Foto *</label>
+                        <label>Foto</label>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control bg-light" value="<?= user()->user_image; ?>" id="image" name="image" required>
                         </div>
                         <button type="submit" class="btn btn-primary mt-4 mb-4">Update</button>
+                        <a href="/home" class="btn btn-danger mt-4 mb-4 ml-1">Keluar</a>
                     </div>
                     <div class="col-sm-3">
                     </div>

@@ -26,4 +26,8 @@ class Donatur_model extends Model
         $query = $this->db->table('donatur')->delete(array('id' => $id));
         return $query;
     }
+    public function getDonaturPembayaran($id)
+    {
+        return $this->where(['id' => $id])->first();
+    }
 }
