@@ -21,18 +21,21 @@ class PembayaranDonatur extends BaseController
         $data['donatur'] = $model->getDonaturPembayaran($id)->getResultArray();
         $data['bulan'] = $model1->getBulan()->getResultArray();
         $data['detail'] = $model1->getDetail($id)->getResultArray();
+        $data['temp'] = $model1->getTemp($id)->getResultArray();
         echo view('v_tambahpd', $data);
     }
 
-    public function save()
+    public function savedetail()
     {
         $model = new PembayaranDonatur_model();
+        $id = $this->request->getPost('id');
         $data = array(
-            'nama' => $this->request->getPost('nama')
+            'iddonatur' => $this->request->getPost('id'),
+            'idbulan' => $this->request->getPost('bulan'),
+            'jumlah' => $this->request->getPost('jumlah')
         );
-        $model->savePembayaranDonatur($data);
-        session()->setFlashdata('pesan', 'Data berhasil disimpan.');
-        return redirect()->to('/pembayarandonatur');
+        $model->saveDetail($data);
+        return redirect()->to('/pembayarandonatur/tambah/' . $id);
     }
 
     public function update()
@@ -47,11 +50,11 @@ class PembayaranDonatur extends BaseController
         return redirect()->to('/pembayarandonatur');
     }
 
-    public function delete()
+    public function deletedetail()
     {
         $model = new PembayaranDonatur_model();
         $id = $this->request->getPost('id');
-        $model->deletePembayaranDonatur($id);
+        $model->deleteDetail($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
         return redirect()->to('/pembayarandonatur');
     }

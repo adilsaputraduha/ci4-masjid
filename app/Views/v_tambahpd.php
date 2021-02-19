@@ -62,11 +62,12 @@
 
 <div class="col-sm-12">
     <div class="card">
-        <form action="/pembayarandonatur/save" method="POST">
+        <form action="/pembayarandonatur/savedetail" method="POST">
             <?= csrf_field(); ?>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
+                        <input type="hidden" id="id" name="id" value="<?= $row['id']; ?>">
                         <label>Bulan</label>
                         <div class="input-group mb-3">
                             <select name="bulan" id="bulan" class="form-control" required>
@@ -103,13 +104,13 @@
                     </thead>
                     <tbody>
                         <?php $no = 0;
-                        foreach ($detail as $row) : $no++ ?>
+                        foreach ($temp as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
                                 <td> <?= $row['namabulan']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>" data-idd="<?= $row['donatur']; ?>" data-bulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    <a href="/pembayarandonatur/deletedetail" class="btn-sm btn-danger btn-delete" data-iddonatur="<?= $row['iddonatur']; ?>" data-idbulan="<?= $row['idbulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
