@@ -54,7 +54,7 @@
                     </div>
                     <div class="collapse" id="nav-user-link">
                         <ul class="list-unstyled">
-                            <li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>Lihat Profil</a></li>
+                            <li class="list-group-item"><a href="/profil"><i class="feather icon-user m-r-5"></i>Lihat Profil</a></li>
                             <li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Pengaturan</a></li>
                             <li class="list-group-item"><a href="<?= base_url('logout'); ?>"><i class="feather icon-log-out m-r-5"></i>Keluar</a></li>
                         </ul>
