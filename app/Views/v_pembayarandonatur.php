@@ -32,7 +32,7 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
-            <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
+            <h5>Pilih Donatur</h5>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
@@ -55,7 +55,7 @@
                                 <td> <?= $row['alamat']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
+                                    <a href="/pembayarandonatur/tambah" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
