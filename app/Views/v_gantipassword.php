@@ -36,22 +36,25 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
-                    <input type="hidden" id="id" name="id">
-                    <label>Nama Donatur</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="nama" name="nama" readonly required>
-                    </div>
-                    <div class="form-group">
-                        <label>Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
-                    </div>
+                <div class="col-sm-3">
                 </div>
-                <div class="col-md-6">
-                    <label>Alamat Donatur</label>
-                    <div class="input-group">
-                        <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required></textarea>
+                <div class="col-sm">
+                    <label>Password Lama *</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="lama" name="lama" required>
                     </div>
+                    <label>Password Baru *</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="baru" name="baru" required>
+                    </div>
+                    <label>Ulangi Password Baru *</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="baruulang" name="baruulang" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3 mb-4">Update</button>
+                    <a href="/home" class="btn btn-danger mt-3 mb-4 ml-1">Batal</a>
+                </div>
+                <div class="col-sm-3">
                 </div>
             </div>
         </div>

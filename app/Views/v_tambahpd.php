@@ -62,31 +62,34 @@
 
 <div class="col-sm-12">
     <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <label>Bulan</label>
-                    <div class="input-group mb-3">
-                        <select name="bulan" id="bulan" class="form-control" required>
-                            <?php foreach ($bulan as $row) : ?>
-                                <option value="<?= $row['idb'] ?>"><?= $row['namabulan'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
+        <form action="/pembayarandonatur/save" method="POST">
+            <?= csrf_field(); ?>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Bulan</label>
+                        <div class="input-group mb-3">
+                            <select name="bulan" id="bulan" class="form-control" required>
+                                <?php foreach ($bulan as $row) : ?>
+                                    <option value="<?= $row['idb'] ?>"><?= $row['namabulan'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <label>Jumlah</label>
-                    <div class="input-group mb-3">
-                        <?php foreach ($donatur as $row) : ?>
-                            <input type="text" class="form-control" value="<?= $row['jumlah']; ?>" id="jumlah" name="jumlah" required>
-                            <div class="input-group-append">
-                                <button class="btn btn-success ml-2" type="button" onclick="tambah()">Ok</button>
-                            </div>
-                        <?php endforeach; ?>
+                    <div class="col-md-6">
+                        <label>Jumlah</label>
+                        <div class="input-group mb-3">
+                            <?php foreach ($donatur as $row) : ?>
+                                <input type="text" class="form-control" value="<?= $row['jumlah']; ?>" id="jumlah" name="jumlah" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-success ml-2" type="submit">Ok</button>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <table class="table table-striped" id="detail">
@@ -120,7 +123,6 @@
     </div>
 </div>
 
-
 <script>
     $('.btn-pilih').on('click', function() {
         const id = $(this).data('id');
@@ -133,15 +135,6 @@
         $('#jumlah').val(jumlah);
         $('#cariDonatur').modal('hide');
     });
-
-    function reload_table() {
-        $.ajax({
-            url: "<?= site_url('pembayarandonatur/tambah'); ?>",
-            success: function(data) {
-                $('#detail').html(data);
-            }
-        });
-    }
 </script>
 
 <?= $this->endSection(); ?>
