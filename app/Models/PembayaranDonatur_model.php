@@ -27,4 +27,11 @@ class PembayaranDonatur_model extends Model
         $query = $this->db->table('pembayaran_donatur')->delete(array('id' => $id));
         return $query;
     }
+
+    // public function getDetail($id)
+    // {
+    //     return  $this->db->table('detail_pembayaran')
+    //         ->join('donatur', 'donatur.id = pembayaran_donatur.donatur')
+    //         ->get()->getresultArray();
+    // }
 }

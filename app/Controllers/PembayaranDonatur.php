@@ -9,16 +9,14 @@ class PembayaranDonatur extends BaseController
 {
     public function index()
     {
-        $model = new PembayaranDonatur_model();
-        $data['pembayarandonatur'] = $model->getPembayaranDonatur();
+        $model = new Donatur_model();
+        $data['donatur'] = $model->getDonatur()->getResultArray();
         echo view('v_pembayarandonatur', $data);
     }
 
     public function tambah()
     {
-        $model = new Donatur_model();
-        $data['donatur'] = $model->getDonatur()->getResultArray();
-        echo view('v_tambahpd', $data);
+        echo view('v_tambahpd');
     }
 
     public function save()

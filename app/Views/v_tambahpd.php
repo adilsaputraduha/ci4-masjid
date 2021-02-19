@@ -97,7 +97,7 @@
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" id="detail">
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
@@ -153,7 +153,7 @@
                     </thead>
                     <tbody>
                         <?php $no = 0;
-                        foreach ($donatur as $row) : $no++ ?>
+                        foreach ($detail as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
                                 <td> <?= $row['nama']; ?></td>
@@ -188,6 +188,15 @@
         $('#jumlah').val(jumlah);
         $('#cariDonatur').modal('hide');
     });
+
+    function reload_table() {
+        $.ajax({
+            url: "<?= site_url('pembayarandonatur/tambah'); ?>",
+            success: function(data) {
+                $('#detail').html(data);
+            }
+        });
+    }
 </script>
 
 <?= $this->endSection(); ?>

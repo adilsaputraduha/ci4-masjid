@@ -12,7 +12,7 @@
                 </div>
                 <ul class="breadcrumb float-right">
                     <li class="breadcrumb-item"><a href="/home"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">Master</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
                     <li class="breadcrumb-item"><a href="#">Pembayaran Donatur</a></li>
                 </ul>
             </div>
@@ -32,7 +32,6 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
-            <a href="/pembayarandonatur/tambah" class="btn btn-primary">Tambah Data</a>
             <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
@@ -41,21 +40,22 @@
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
-                            <th>Tanggall</th>
-                            <th>Donatur</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 0;
-                        foreach ($pembayarandonatur as $row) : $no++ ?>
+                        foreach ($donatur as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
-                                <td> <?= $row['tanggal']; ?></td>
                                 <td> <?= $row['nama']; ?></td>
+                                <td> <?= $row['alamat']; ?></td>
+                                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-donatur="<?= $row['donatur']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    <a href="#" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i> Pilih</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
