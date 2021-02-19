@@ -69,7 +69,7 @@
                     <div class="input-group mb-3">
                         <select name="bulan" id="bulan" class="form-control" required>
                             <?php foreach ($bulan as $row) : ?>
-                                <option value="<?= $row['id'] ?>"><?= $row['nama'] ?></option>
+                                <option value="<?= $row['idb'] ?>"><?= $row['namabulan'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -103,10 +103,10 @@
                         foreach ($detail as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
-                                <td> <?= $row['bulan']; ?></td>
+                                <td> <?= $row['namabulan']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>" data-idd="<?= $row['idd']; ?>" data-bulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>" data-idd="<?= $row['donatur']; ?>" data-bulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

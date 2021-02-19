@@ -30,7 +30,9 @@ class PembayaranDonatur_model extends Model
 
     public function getDetail($id)
     {
-        return $this->db->table('detail_pembayaran')->where(['idd' => $id])->get();
+        return $this->db->table('pembayaran_donatur')
+            ->join('bulan', 'bulan.idb = pembayaran_donatur.bulan')
+            ->where(['donatur' => $id])->get();
     }
     public function getBulan()
     {

@@ -52,7 +52,7 @@
     <?php endif; ?>
 
     <li class="nav-item">
-        <a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Ganti Password</span></a>
+        <a href="/password" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Ganti Password</span></a>
     </li>
     <li class="nav-item">
         <a href="<?= base_url('logout'); ?>" class="nav-link "><span class="pcoded-micon"><i class="feather icon-log-out"></i></span><span class="pcoded-mtext">Logout</span></a>
