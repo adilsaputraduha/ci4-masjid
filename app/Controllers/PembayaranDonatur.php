@@ -17,7 +17,10 @@ class PembayaranDonatur extends BaseController
     public function tambah($id)
     {
         $model = new Donatur_model();
-        $data['donatur'] = $model->getDonaturPembayaran($id);
+        $model1 = new PembayaranDonatur_model();
+        $data['donatur'] = $model->getDonaturPembayaran($id)->getResultArray();
+        $data['bulan'] = $model1->getBulan()->getResultArray();
+        $data['detail'] = $model1->getDetail($id)->getResultArray();
         echo view('v_tambahpd', $data);
     }
 

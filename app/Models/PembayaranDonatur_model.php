@@ -28,10 +28,13 @@ class PembayaranDonatur_model extends Model
         return $query;
     }
 
-    // public function getDetail($id)
-    // {
-    //     return  $this->db->table('detail_pembayaran')
-    //         ->join('donatur', 'donatur.id = pembayaran_donatur.donatur')
-    //         ->get()->getresultArray();
-    // }
+    public function getDetail($id)
+    {
+        return $this->db->table('detail_pembayaran')->where(['idd' => $id])->get();
+    }
+    public function getBulan()
+    {
+        $bulder = $this->db->table('bulan');
+        return $bulder->get();
+    }
 }

@@ -36,26 +36,25 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
-                    <input type="hidden" id="id" name="id">
-                    <label>Nama Donatur</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="nama" name="nama" readonly required>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary ml-2" type="button" data-toggle="modal" data-target="#cariDonatur">Cari Data</button>
+                <?php foreach ($donatur as $row) : ?>
+                    <div class="col-md-6">
+                        <input type="hidden" id="id" name="id" value="<?= $row['id']; ?>">
+                        <label>Nama Donatur</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" value="<?= $row['nama']; ?>" id="nama" name="nama" readonly required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
+                    <div class="col-md-6">
+                        <label>Alamat Donatur</label>
+                        <div class="input-group">
+                            <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required><?= $row['alamat']; ?></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <label>Alamat Donatur</label>
-                    <div class="input-group">
-                        <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required></textarea>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -69,28 +68,21 @@
                     <label>Bulan</label>
                     <div class="input-group mb-3">
                         <select name="bulan" id="bulan" class="form-control" required>
-                            <option value="1">Januari</option>
-                            <option value="2">Februari</option>
-                            <option value="3">Maret</option>
-                            <option value="4">April</option>
-                            <option value="5">Mei</option>
-                            <option value="6">Juni</option>
-                            <option value="7">Juli</option>
-                            <option value="8">Agustus</option>
-                            <option value="9">September</option>
-                            <option value="10">Oktober</option>
-                            <option value="11">November</option>
-                            <option value="12">Desember</option>
+                            <?php foreach ($bulan as $row) : ?>
+                                <option value="<?= $row['id'] ?>"><?= $row['nama'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label>Jumlah</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="jumlah" name="jumlah" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-success ml-2" type="button" onclick="tambah()">Ok</button>
-                        </div>
+                        <?php foreach ($donatur as $row) : ?>
+                            <input type="text" class="form-control" value="<?= $row['jumlah']; ?>" id="jumlah" name="jumlah" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-success ml-2" type="button" onclick="tambah()">Ok</button>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -101,52 +93,7 @@
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
-                            <th>No. Hp</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($donatur as $row) : $no++ ?>
-                            <tr>
-                                <td> <?= $no; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td> <?= $row['alamat']; ?></td>
-                                <td> <?= $row['nohp']; ?></td>
-                                <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-            <hr>
-            <button type="button" class="btn btn-primary">Simpan</button>
-            <button type="submit" class="btn btn-danger ml-1">Batal</button>
-        </div>
-
-    </div>
-</div>
-
-<div class="modal fade" id="cariDonatur" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title"> Pilih Donatur</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table id="data" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th width="10%">No.</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
+                            <th>Bulan</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -156,21 +103,19 @@
                         foreach ($detail as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td> <?= $row['alamat']; ?></td>
+                                <td> <?= $row['bulan']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-success btn-pilih" data-id="<?= $row['id']; ?>" data-nama="<?= $row['nama']; ?>" data-alamat="<?= $row['alamat']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-hand-left"></i></a>
+                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>" data-idd="<?= $row['idd']; ?>" data-bulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-            <div class="modal-footer">
-                <input type="hidden" name="id" class="id">
-                <button type="button" class="btn btn-secondary mt-2 mb-2 mr-2" data-dismiss="modal">Batal</button>
-            </div>
+            <hr>
+            <button type="button" class="btn btn-primary">Simpan</button>
+            <a href="/pembayarandonatur" class="btn btn-danger ml-1">Batal</a>
         </div>
     </div>
 </div>

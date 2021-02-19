@@ -28,6 +28,6 @@ class Donatur_model extends Model
     }
     public function getDonaturPembayaran($id)
     {
-        return $this->where(['id' => $id])->first();
+        return $this->db->table('donatur')->where(['id' => $id])->get();
     }
 }
