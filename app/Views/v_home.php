@@ -39,7 +39,7 @@
                         <div class="row align-items-center">
                             <div class="col-8">
                                 <h4 class="text-c-yellow">$30200</h4>
-                                <h6 class="text-muted m-b-0">All Earnings</h6>
+                                <h6 class="text-muted m-b-0">Pemasukan</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="feather icon-bar-chart-2 f-28"></i>
@@ -63,8 +63,10 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="text-c-green">290+</h4>
-                                <h6 class="text-muted m-b-0">Page Views</h6>
+                                <?php foreach ($totpengurus as $row) : ?>
+                                    <h4 class="text-c-green"><?= $row['jumlah']; ?> Orang</h4>
+                                <?php endforeach; ?>
+                                <h6 class="text-muted m-b-0">Pengurus</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="feather icon-file-text f-28"></i>
@@ -88,8 +90,10 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="text-c-red">145</h4>
-                                <h6 class="text-muted m-b-0">Task</h6>
+                                <?php foreach ($totdonatur as $row) : ?>
+                                    <h4 class="text-c-red"><?= $row['jumlah']; ?> Orang</h4>
+                                <?php endforeach; ?>
+                                <h6 class="text-muted m-b-0">Donatur</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="feather icon-calendar f-28"></i>
@@ -114,7 +118,7 @@
                         <div class="row align-items-center">
                             <div class="col-8">
                                 <h4 class="text-c-blue">500</h4>
-                                <h6 class="text-muted m-b-0">Downloads</h6>
+                                <h6 class="text-muted m-b-0">Pengeluaran</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="feather icon-thumbs-down f-28"></i>
