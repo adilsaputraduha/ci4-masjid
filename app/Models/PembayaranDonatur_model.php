@@ -17,12 +17,12 @@ class PembayaranDonatur_model extends Model
         $query = $this->db->table('pembayaran_donatur')->insert($data);
         return $query;
     }
-    public function updatePembayaranDonatur($data, $id)
-    {
-        $query = $this->db->table('pembayaran_donatur')->update($data, array('id' => $id));
-        return $query;
-    }
-    public function deletePembayaranDonatur($id)
+    // public function updatePembayaranDonatur($data, $id)
+    // {
+    //     $query = $this->db->table('pembayaran_donatur')->update($data, array('id' => $id));
+    //     return $query;
+    // }
+    public function deletePembayaranDonatur($id, $bulan)
     {
         $query = $this->db->table('pembayaran_donatur')->delete(array('id' => $id));
         return $query;
@@ -33,16 +33,5 @@ class PembayaranDonatur_model extends Model
         return $this->db->table('pembayaran_donatur')
             ->join('bulan', 'bulan.idb = pembayaran_donatur.bulan')
             ->where(['donatur' => $id])->get();
-    }
-
-    public function saveDetail($data)
-    {
-        $query = $this->db->table('temp')->insert($data);
-        return $query;
-    }
-    public function deleteDetail($data)
-    {
-        $query = $this->db->table('temp')->insert($data);
-        return $query;
     }
 }

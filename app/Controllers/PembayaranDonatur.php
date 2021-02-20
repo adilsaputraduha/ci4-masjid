@@ -34,32 +34,33 @@ class PembayaranDonatur extends BaseController
         $model = new PembayaranDonatur_model();
         $id = $this->request->getPost('id');
         $data = array(
-            'iddonatur' => $this->request->getPost('id'),
-            'idbulan' => $this->request->getPost('bulan'),
+            'tanggal' => $this->request->getPost('tanggal'),
+            'donatur' => $this->request->getPost('id'),
+            'bulan' => $this->request->getPost('bulan'),
             'jumlah' => $this->request->getPost('jumlah')
         );
-        $model->saveDetail($data);
+        $model->savePembayaranDonatur($data);
         return redirect()->to('/pembayarandonatur/tambah/' . $id);
     }
 
-    public function update()
-    {
-        $model = new PembayaranDonatur_model();
-        $id = $this->request->getPost('id');
-        $data = array(
-            'nama' => $this->request->getPost('nama')
-        );
-        $model->updatePembayaranDonatur($data, $id);
-        session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-        return redirect()->to('/pembayarandonatur');
-    }
+    // public function update()
+    // {
+    //     $model = new PembayaranDonatur_model();
+    //     $id = $this->request->getPost('id');
+    //     $data = array(
+    //         'nama' => $this->request->getPost('nama')
+    //     );
+    //     $model->updatePembayaranDonatur($data, $id);
+    //     session()->setFlashdata('pesan', 'Data berhasil diupdate.');
+    //     return redirect()->to('/pembayarandonatur');
+    // }
 
     public function deletedetail()
     {
         $model = new PembayaranDonatur_model();
         $id = $this->request->getPost('id');
-        $model->deleteDetail($id);
-        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-        return redirect()->to('/pembayarandonatur');
+        $bulan = $this->request->getPost('bulan');
+        $model->deletePembayaranDonatur($id, $bulan);
+        return redirect()->to('/pembayarandonatur/tambah/' . $id);
     }
 }

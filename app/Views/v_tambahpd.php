@@ -14,6 +14,7 @@
                     <li class="breadcrumb-item"><a href="/home"><i class="feather icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
                     <li class="breadcrumb-item"><a href="#">Pembayaran Donatur</a></li>
+                    <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                 </ul>
             </div>
         </div>
@@ -83,7 +84,7 @@
                             <?php foreach ($donatur as $row) : ?>
                                 <input type="text" class="form-control" value="<?= $row['jumlah']; ?>" id="jumlah" name="jumlah" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-success ml-2" type="submit">Ok</button>
+                                    <button class="btn btn-primary ml-2" type="submit">Ok</button>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -91,6 +92,9 @@
                 </div>
             </div>
         </form>
+        <div class="card-header">
+            <h5>Data Pembayaran Donatur</h5>
+        </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <table class="table table-striped" id="detail">
@@ -118,8 +122,7 @@
                 </table>
             </div>
             <hr>
-            <button type="button" class="btn btn-primary">Simpan</button>
-            <a href="/pembayarandonatur" class="btn btn-danger ml-1">Batal</a>
+            <a href="/pembayarandonatur" class="btn btn-success ml-1 float-right">Selesai</a>
         </div>
     </div>
 </div>
