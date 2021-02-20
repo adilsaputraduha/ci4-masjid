@@ -55,11 +55,9 @@ class PembayaranDonatur extends BaseController
     //     return redirect()->to('/pembayarandonatur');
     // }
 
-    public function deletedetail()
+    public function deletedetail($id, $bulan)
     {
         $model = new PembayaranDonatur_model();
-        $id = $this->request->getPost('id');
-        $bulan = $this->request->getPost('bulan');
         $model->deletePembayaranDonatur($id, $bulan);
         return redirect()->to('/pembayarandonatur/tambah/' . $id);
     }

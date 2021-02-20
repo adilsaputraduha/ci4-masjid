@@ -24,7 +24,7 @@ class PembayaranDonatur_model extends Model
     // }
     public function deletePembayaranDonatur($id, $bulan)
     {
-        $query = $this->db->table('pembayaran_donatur')->delete(array('id' => $id));
+        $query = $this->db->table('pembayaran_donatur')->delete(array('donatur' => $id, 'bulan' => $bulan));
         return $query;
     }
 

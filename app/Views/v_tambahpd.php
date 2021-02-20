@@ -33,17 +33,17 @@
                     <?php foreach ($donatur as $row) : ?>
                         <div class="col-md-6">
                             <input type="hidden" id="id" name="id" value="<?= $row['id']; ?>">
-                            <label>Nama Donatur</label>
+                            <label>Nama Donatur *</label>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" value="<?= $row['nama']; ?>" id="nama" name="nama" readonly required>
                             </div>
                             <div class="form-group">
-                                <label>Tanggal</label>
+                                <label>Tanggal *</label>
                                 <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Alamat Donatur</label>
+                            <label>Alamat Donatur *</label>
                             <div class="input-group">
                                 <textarea class="form-control" id="alamat" name="alamat" rows="5" readonly required><?= $row['alamat']; ?></textarea>
                             </div>
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <input type="hidden" id="id" name="id" value="<?= $row['id']; ?>">
-                        <label>Bulan</label>
+                        <label>Bulan *</label>
                         <div class="input-group mb-3">
                             <select name="bulan" id="bulan" class="form-control" required>
                                 <?php foreach ($bulan as $row) : ?>
@@ -69,24 +69,21 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label>Jumlah</label>
+                        <label>Jumlah *</label>
                         <div class="input-group mb-3">
                             <?php foreach ($donatur as $row) : ?>
                                 <input type="text" class="form-control" value="<?= $row['jumlah']; ?>" id="jumlah" name="jumlah" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary ml-2" type="submit">Ok</button>
+                                    <button class="btn btn-primary ml-2" type="submit">Simpan</button>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-header">
-                <h5>Data Pembayaran Donatur</h5>
-            </div>
-            <div class="card-body table-border-style">
+            <div class="card-body table-border-style" style="margin-top: -30px;">
                 <div class="table-responsive">
-                    <table class="table table-striped" id="detail">
+                    <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
                                 <th width="10%">No.</th>
@@ -103,7 +100,7 @@
                                     <td> <?= $row['namabulan']; ?></td>
                                     <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                     <td style="text-align: center;">
-                                        <a href="/pembayarandonatur/deletedetail" class="btn-sm btn-danger btn-delete" data-iddonatur="<?= $row['donatur']; ?>" data-idbulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                        <a href="/pembayarandonatur/deletedetail/<?= $row['donatur']; ?>/<?= $row['bulan']; ?>" class="btn btn-danger btn-sm"><i class="icofont icofont-ui-delete"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
