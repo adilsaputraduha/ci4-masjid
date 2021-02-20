@@ -81,38 +81,43 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body table-border-style" style="margin-top: -30px;">
-                <div class="table-responsive">
-                    <table class="table table-striped" id="datatable">
-                        <thead>
-                            <tr>
-                                <th width="10%">No.</th>
-                                <th>Bulan</th>
-                                <th>Jumlah</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no = 0;
-                            foreach ($detail as $row) : $no++ ?>
-                                <tr>
-                                    <td> <?= $no; ?></td>
-                                    <td> <?= $row['namabulan']; ?></td>
-                                    <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
-                                    <td style="text-align: center;">
-                                        <a href="/pembayarandonatur/deletedetail/<?= $row['donatur']; ?>/<?= $row['bulan']; ?>" class="btn btn-danger btn-sm"><i class="icofont icofont-ui-delete"></i></a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-                <hr>
-                <a href="/pembayarandonatur" class="btn btn-success ml-1 float-right">Selesai</a>
-            </div>
-        </div>
-    </div>
 </form>
+<div class="card-body table-border-style" style="margin-top: -30px;">
+    <div class="table-responsive">
+        <table class="table table-striped" id="datatable">
+            <thead>
+                <tr>
+                    <th width="10%">No.</th>
+                    <th>Bulan</th>
+                    <th>Jumlah</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $no = 0;
+                foreach ($detail as $row) : $no++ ?>
+                    <tr>
+                        <td> <?= $no; ?></td>
+                        <td> <?= $row['namabulan']; ?></td>
+                        <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+                        <td style="text-align: center;">
+                            <form action="/pembayarandonatur/<?= $row['donatur']; ?>/<?= $row['bulan']; ?>" method="post">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="icofont icofont-ui-delete"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <a href="/pembayarandonatur" class="btn btn-success ml-1 float-right">Selesai</a>
+</div>
+</div>
+</div>
+
 <script>
     document.getElementById('tanggal').valueAsDate = new Date();
 </script>
