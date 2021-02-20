@@ -19,9 +19,13 @@ class PembayaranDonatur extends BaseController
         $model = new Donatur_model();
         $model1 = new PembayaranDonatur_model();
         $data['donatur'] = $model->getDonaturPembayaran($id)->getResultArray();
-        $data['bulan'] = $model1->getBulan()->getResultArray();
+
+        // Ambil bulan
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT * FROM bulan WHERE idb NOT IN (SELECT bulan FROM pembayaran_donatur WHERE donatur=" . $id . ")");
+        $row = $bulan->getResultArray();
+        $data['bulan'] = $row;
         $data['detail'] = $model1->getDetail($id)->getResultArray();
-        $data['temp'] = $model1->getTemp($id)->getResultArray();
         echo view('v_tambahpd', $data);
     }
 

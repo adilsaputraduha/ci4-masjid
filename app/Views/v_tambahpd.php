@@ -104,13 +104,13 @@
                     </thead>
                     <tbody>
                         <?php $no = 0;
-                        foreach ($temp as $row) : $no++ ?>
+                        foreach ($detail as $row) : $no++ ?>
                             <tr>
                                 <td> <?= $no; ?></td>
                                 <td> <?= $row['namabulan']; ?></td>
                                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                                 <td style="text-align: center;">
-                                    <a href="/pembayarandonatur/deletedetail" class="btn-sm btn-danger btn-delete" data-iddonatur="<?= $row['iddonatur']; ?>" data-idbulan="<?= $row['idbulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    <a href="/pembayarandonatur/deletedetail" class="btn-sm btn-danger btn-delete" data-iddonatur="<?= $row['donatur']; ?>" data-idbulan="<?= $row['bulan']; ?>"><i class="icofont icofont-ui-delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

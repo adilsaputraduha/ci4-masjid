@@ -34,18 +34,7 @@ class PembayaranDonatur_model extends Model
             ->join('bulan', 'bulan.idb = pembayaran_donatur.bulan')
             ->where(['donatur' => $id])->get();
     }
-    public function getBulan()
-    {
-        $bulder = $this->db->table('bulan');
-        return $bulder->get();
-    }
 
-    public function getTemp($id)
-    {
-        return $this->db->table('temp')
-            ->join('bulan', 'bulan.idb = temp.idbulan')
-            ->where(['iddonatur' => $id])->get();
-    }
     public function saveDetail($data)
     {
         $query = $this->db->table('temp')->insert($data);
