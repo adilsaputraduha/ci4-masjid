@@ -63,7 +63,7 @@
 
                             <button type="submit" class="btn btn-block btn-primary mb-4">Masuk</button>
                             <?php if ($config->activeResetter) : ?>
-                                <p class="text-muted">Lupa password? <a href="<?= route_to('forgot') ?>" class="f-w-400">Reset</a></p>
+                                <p class="text-muted">Lupa password? <a href="<?= route_to('forgot') ?>" class="f-w-400">Contact Admin</a></p>
                             <?php endif; ?>
                         </form>
                     </div>

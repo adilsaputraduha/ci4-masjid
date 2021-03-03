@@ -47,7 +47,7 @@
 
                 <div class="">
                     <div class="main-menu-header">
-                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/userimage/<?= user()->user_image; ?>" alt="User-Image">
+                        <img class="img-radius" src="<?= base_url(); ?>/assets/images/userimage/<?= user()->image; ?>" alt="User-Image">
                         <div class="user-details mt-1">
                             <div id="more-details"><?= user()->fullname; ?> <i class="fa fa-caret-down"></i></div>
                         </div>
