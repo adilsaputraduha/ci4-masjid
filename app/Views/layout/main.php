@@ -155,7 +155,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
-                                <img src="<?= base_url(); ?>/assets/images/userimage/<?= user()->user_image; ?>" class="img-radius" alt="User-Profile-Image">
+                                <img src="<?= base_url(); ?>/assets/images/userimage/<?= user()->image; ?>" class="img-radius" alt="User-Profile-Image">
                                 <span><?= user()->fullname; ?></span>
                                 <a href="<?= base_url('logout'); ?>" class="dud-logout" title="Logout">
                                     <i class="feather icon-log-out"></i>

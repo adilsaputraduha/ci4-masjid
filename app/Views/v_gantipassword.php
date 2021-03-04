@@ -35,28 +35,27 @@
             <h5>Ganti Password</h5>
         </div>
         <div class="card-body">
-            <div class="row">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm">
-                    <label>Password Lama *</label>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="lama" name="lama" required>
+            <form action="/gantipassword/update" method="post">
+                <div class="row justify-content-center">
+                    <div class="col-sm-5">
+                        <input type="hidden" name="id" id="id" value="<?= user()->id; ?>">
+                        <label>Password Lama *</label>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="lama" name="lama" required>
+                        </div>
+                        <label>Password Baru *</label>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="baru" name="baru" required>
+                        </div>
+                        <label>Ulangi Password Baru *</label>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="baruulang" name="baruulang" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 mb-4">Update</button>
+                        <a href="/home" class="btn btn-danger mt-3 mb-4 ml-1">Batal</a>
                     </div>
-                    <label>Password Baru *</label>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="baru" name="baru" required>
-                    </div>
-                    <label>Ulangi Password Baru *</label>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="baruulang" name="baruulang" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-3 mb-4">Update</button>
-                    <a href="/home" class="btn btn-danger mt-3 mb-4 ml-1">Batal</a>
                 </div>
-                <div class="col-sm-3">
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
