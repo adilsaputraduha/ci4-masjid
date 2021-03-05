@@ -20,7 +20,6 @@ class JenisPengeluaran extends BaseController
         );
         $model->saveJenisPengeluaran($data);
         session()->setFlashdata('pesan', 'Data berhasil disimpan.');
-        return redirect()->to('/jenispengeluaran');
     }
 
     public function update()
@@ -32,7 +31,6 @@ class JenisPengeluaran extends BaseController
         );
         $model->updateJenisPengeluaran($data, $id);
         session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-        return redirect()->to('/jenispengeluaran');
     }
 
     public function delete()
@@ -41,6 +39,12 @@ class JenisPengeluaran extends BaseController
         $id = $this->request->getPost('id');
         $model->deleteJenisPengeluaran($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-        return redirect()->to('/jenispengeluaran');
+    }
+
+    public function table_jenispengeluaran()
+    {
+        $model = new JenisPengeluaran_model();
+        $data['jenispengeluaran'] = $model->getJenisPengeluaran()->getresultArray();
+        echo view('ajax/table_jenis_pengeluaran', $data);
     }
 }

@@ -32,9 +32,9 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-primary" onclick="reload_table()">Reload Table</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data</button>
-            <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
+            <button class="btn btn-success" onclick="reload_table()">Refresh Tabel</button>
+            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
@@ -67,7 +67,7 @@
     </div>
 </div>
 
-<form method="POST" action="/jenispemasukan/save" enctype="">
+<form id="form_tambah">
     <?= csrf_field(); ?>
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -86,14 +86,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Simpan</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="simpan()">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="/jenispemasukan/update" enctype="">
+<form id="form_edit">
     <?= csrf_field(); ?>
     <div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -113,14 +113,14 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Edit</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="edit()">Edit</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="/jenispemasukan/delete" enctype="">
+<form id="form_delete">
     <?= csrf_field(); ?>
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -141,7 +141,7 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Yakin</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="hapus()">Yakin</button>
                 </div>
             </div>
         </div>
@@ -174,12 +174,50 @@
         $.ajax({
             url:"<?= base_url('jenispemasukan/table_jenispemasukan'); ?>",
             beforeSend: function(f){
-                $('#coba').html('Mencari data...');
+                $('#coba').html(`<div class="text-center">
+                Mencari data...
+                </div>`);
             },
             success: function(data){
                 $('#coba').html(data);
             }
         })
+    }
+
+    function simpan(){
+        $.ajax({
+            url:"<?= base_url('jenispemasukan/save'); ?>",
+            type: "POST",
+            data: $("#form_tambah").serialize(),
+            success: function(data){
+                $('#addModal').modal('hide');
+                reload_table();
+            }
+        });
+    }
+
+    function edit(){
+        $.ajax({
+            url:"<?= base_url('jenispemasukan/update'); ?>",
+            type: "POST",
+            data: $("#form_edit").serialize(),
+            success: function(data){
+                $('#updateModal').modal('hide');
+                reload_table();
+            }
+        });
+    }
+
+    function hapus(){
+        $.ajax({
+            url:"<?= base_url('jenispemasukan/delete'); ?>",
+            type: "POST",
+            data: $("#form_delete").serialize(),
+            success: function(data){
+                $('#deleteModal').modal('hide');
+                reload_table();
+            }
+        });
     }
 </script>
 

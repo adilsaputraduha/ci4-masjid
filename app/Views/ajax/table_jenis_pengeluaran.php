@@ -8,7 +8,7 @@
     </thead>
     <tbody>
         <?php $no = 0;
-        foreach ($jenispemasukan as $row) : $no++ ?>
+        foreach ($jenispengeluaran as $row) : $no++ ?>
         <tr>
             <td> <?= $no; ?></td>
             <td> <?= $row['nama']; ?></td>
@@ -22,7 +22,7 @@
 </table>
 
 <script>
-$('.btn-delete').on('click', function() {
+    $('.btn-delete').on('click', function() {
         const id = $(this).data('id');
         $('.id').val(id);
         $('#deleteModal').modal('show');
