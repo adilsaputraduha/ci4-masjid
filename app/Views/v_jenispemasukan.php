@@ -32,33 +32,36 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
+            <button class="btn btn-primary" onclick="reload_table()">Reload Table</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data</button>
             <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table id="datatable" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th width="10%">No.</th>
-                            <th>Nama</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($jenispemasukan as $row) : $no++ ?>
+                <div id="coba" class="coba">
+                    <table id="datatable" class="table table-striped">
+                        <thead>
                             <tr>
-                                <td> <?= $no; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['idp']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['idp']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                </td>
+                                <th width="10%">No.</th>
+                                <th>Nama</th>
+                                <th>Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php $no = 0;
+                            foreach ($jenispemasukan as $row) : $no++ ?>
+                                <tr>
+                                    <td> <?= $no; ?></td>
+                                    <td> <?= $row['nama']; ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['idp']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                        <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['idp']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -165,6 +168,18 @@
         if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
             return false;
         return true;
+    }
+
+    function reload_table(){
+        $.ajax({
+            url:"<?= base_url('jenispemasukan/table_jenispemasukan'); ?>",
+            beforeSend: function(f){
+                $('#coba').html('Mencari data...');
+            },
+            success: function(data){
+                $('#coba').html(data);
+            }
+        })
     }
 </script>
 

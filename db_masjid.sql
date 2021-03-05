@@ -96,7 +96,7 @@ CREATE TABLE `auth_logins` (
   PRIMARY KEY (`id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 /*Data for the table `auth_logins` */
 
@@ -156,7 +156,10 @@ insert  into `auth_logins`(`id`,`ip_address`,`email`,`user_id`,`date`,`success`)
 (53,'::1','admin',NULL,'2021-03-02 21:12:39',0),
 (54,'::1','admin',NULL,'2021-03-02 21:12:46',0),
 (55,'::1','admin',NULL,'2021-03-02 21:12:53',0),
-(56,'::1','admin',NULL,'2021-03-02 21:13:11',0);
+(56,'::1','admin',NULL,'2021-03-02 21:13:11',0),
+(57,'::1','admin',NULL,'2021-03-04 21:20:40',0),
+(58,'::1','admin',NULL,'2021-03-04 21:20:59',0),
+(59,'::1','emailbantu0101@gmail.com',5,'2021-03-04 21:23:14',1);
 
 /*Table structure for table `auth_permissions` */
 
@@ -223,9 +226,6 @@ CREATE TABLE `auth_users_permissions` (
 
 /*Data for the table `auth_users_permissions` */
 
-insert  into `auth_users_permissions`(`user_id`,`permission_id`) values 
-(4,1);
-
 /*Table structure for table `bulan` */
 
 DROP TABLE IF EXISTS `bulan`;
@@ -251,6 +251,36 @@ insert  into `bulan`(`idb`,`namabulan`) values
 (10,'Oktober'),
 (11,'November'),
 (12,'Desember');
+
+/*Table structure for table `cash_in` */
+
+DROP TABLE IF EXISTS `cash_in`;
+
+CREATE TABLE `cash_in` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal` date DEFAULT NULL,
+  `jenis` int(11) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `cash_in` */
+
+/*Table structure for table `cash_out` */
+
+DROP TABLE IF EXISTS `cash_out`;
+
+CREATE TABLE `cash_out` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal` date DEFAULT NULL,
+  `jenis` int(11) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `cash_out` */
 
 /*Table structure for table `donatur` */
 
@@ -279,13 +309,15 @@ CREATE TABLE `jenis_pemasukan` (
   `idp` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idp`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `jenis_pemasukan` */
 
 insert  into `jenis_pemasukan`(`idp`,`nama`) values 
 (1,'Infaq'),
-(2,'Kotak Amal');
+(2,'Kotak Amal'),
+(3,'Coba'),
+(4,'Coba2');
 
 /*Table structure for table `jenis_pengeluaran` */
 
@@ -350,36 +382,6 @@ insert  into `pembayaran_donatur`(`id`,`tanggal`,`donatur`,`bulan`,`jumlah`) val
 (12,'2021-03-03',1,11,30000),
 (13,'2021-03-03',1,12,30000);
 
-/*Table structure for table `uang_keluar` */
-
-DROP TABLE IF EXISTS `uang_keluar`;
-
-CREATE TABLE `uang_keluar` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tanggal` date DEFAULT NULL,
-  `jenis` int(11) DEFAULT NULL,
-  `keterangan` varchar(255) DEFAULT NULL,
-  `jumlah` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `uang_keluar` */
-
-/*Table structure for table `uang_masuk` */
-
-DROP TABLE IF EXISTS `uang_masuk`;
-
-CREATE TABLE `uang_masuk` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tanggal` date DEFAULT NULL,
-  `jenis` int(11) DEFAULT NULL,
-  `keterangan` varchar(255) DEFAULT NULL,
-  `jumlah` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `uang_masuk` */
-
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -405,12 +407,12 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`email`,`username`,`fullname`,`password_hash`,`image`,`reset_hash`,`reset_at`,`reset_expires`,`activate_hash`,`status`,`status_message`,`active`,`force_pass_reset`,`created_at`,`updated_at`,`deleted_at`) values 
-(4,'emailbantu0101@gmail.com','admin',NULL,'$2y$10$W0G2M6ffYB9ZE158cn.y.uX10PdhP3apCXYCB59z54OoSYyW55mpm','ok.jpg',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2021-03-02 06:18:23','2021-03-02 06:18:23',NULL);
+(5,'emailbantu0101@gmail.com','admin',NULL,'$2y$10$cSIkWVUVG2RdqAuqJwxx5eQK5gmLryH.Mky89bidrR8bugLxRXpLm','ok.jpg',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2021-03-04 21:22:17','2021-03-04 21:22:17',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

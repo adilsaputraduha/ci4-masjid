@@ -43,4 +43,10 @@ class JenisPemasukan extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
         return redirect()->to('/jenispemasukan');
     }
+    public function table_jenispemasukan()
+    {
+        $model = new JenisPemasukan_model();
+        $data['jenispemasukan'] = $model->getJenisPemasukan()->getresultArray();
+        echo view('ajax/table_jenis_pemasukan', $data);
+    }
 }

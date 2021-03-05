@@ -33,7 +33,7 @@
     <div class="col-lg-12 col-md-12">
         <!-- support-section start -->
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center">
