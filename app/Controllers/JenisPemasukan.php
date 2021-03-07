@@ -19,7 +19,6 @@ class JenisPemasukan extends BaseController
             'nama' => $this->request->getPost('nama')
         );
         $model->saveJenisPemasukan($data);
-        session()->setFlashdata('pesan', 'Data berhasil disimpan.');
     }
 
     public function update()
@@ -30,7 +29,6 @@ class JenisPemasukan extends BaseController
             'nama' => $this->request->getPost('nama')
         );
         $model->updateJenisPemasukan($data, $id);
-        session()->setFlashdata('pesan', 'Data berhasil diupdate.');
     }
 
     public function delete()
@@ -38,7 +36,6 @@ class JenisPemasukan extends BaseController
         $model = new JenisPemasukan_model();
         $id = $this->request->getPost('id');
         $model->deleteJenisPemasukan($id);
-        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
     }
     
     public function table_jenispemasukan()

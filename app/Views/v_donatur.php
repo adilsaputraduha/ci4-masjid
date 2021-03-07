@@ -33,6 +33,7 @@
     <div class="card">
         <div class="card-header">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data</button>
+            <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
             <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">

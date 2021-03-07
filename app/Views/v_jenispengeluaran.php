@@ -33,8 +33,8 @@
     <div class="card">
         <div class="card-header">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
-            <button class="btn btn-success" onclick="reload_table()">Refresh Tabel</button>
-            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
+            <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
+            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print mr-2"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
@@ -190,6 +190,12 @@
             type: "POST",
             data: $("#form_tambah").serialize(),
             success: function(data){
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil disimpan.",
+                    icon: "success",
+                    button: "Ok",
+                });
                 $('#addModal').modal('hide');
                 $('#nama').val('');
                 reload_table();
@@ -203,6 +209,12 @@
             type: "POST",
             data: $("#form_edit").serialize(),
             success: function(data){
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil diedit.",
+                    icon: "success",
+                    button: "Ok",
+                });
                 $('#updateModal').modal('hide');
                 reload_table();
             }
@@ -215,6 +227,12 @@
             type: "POST",
             data: $("#form_delete").serialize(),
             success: function(data){
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil dihapus.",
+                    icon: "success",
+                    button: "Ok",
+                });
                 $('#deleteModal').modal('hide');
                 reload_table();
             }

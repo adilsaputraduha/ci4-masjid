@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
+
     <script type="text/javascript" src="<?= base_url(); ?>/assets/js/plugins/jquery.min.js"></script>
 
 
@@ -255,6 +256,9 @@
     <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="<?= base_url(); ?>/assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <!-- SweetAlert JS -->
+    <script src="<?= base_url(); ?>/assets/bower_components/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- custom-chart js -->
     <script src="<?= base_url(); ?>/assets/js/pages/dashboard-main.js"></script>
