@@ -22,8 +22,6 @@ class Donatur extends BaseController
             'jumlah' => $this->request->getPost('jumlah')
         );
         $model->saveDonatur($data);
-        session()->setFlashdata('pesan', 'Data berhasil disimpan.');
-        return redirect()->to('/donatur');
     }
 
     public function update()
@@ -37,8 +35,6 @@ class Donatur extends BaseController
             'jumlah' => $this->request->getPost('jumlah')
         );
         $model->updateDonatur($data, $id);
-        session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-        return redirect()->to('/donatur');
     }
 
     public function delete()
@@ -46,7 +42,12 @@ class Donatur extends BaseController
         $model = new Donatur_model();
         $id = $this->request->getPost('id');
         $model->deleteDonatur($id);
-        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-        return redirect()->to('/donatur');
+    }
+
+    public function table_donatur()
+    {
+        $model = new Donatur_model();
+        $data['donatur'] = $model->getDonatur()->getresultArray();
+        echo view('ajax/table_donatur', $data);
     }
 }
