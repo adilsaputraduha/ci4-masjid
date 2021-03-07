@@ -28,6 +28,26 @@
 </table>
 
 <script>
+    $('.btn-delete').on('click', function() {
+        const id = $(this).data('id');
+        $('.id').val(id);
+        $('#deleteModal').modal('show');
+    });
+
+    $('.btn-update').on('click', function() {
+        const id = $(this).data('id');
+        const tanggal = $(this).data('tanggal');
+        const jenispengeluaran = $(this).data('jenispengeluaran');
+        const ket = $(this).data('keterangan');
+        const jumlah = $(this).data('jumlah');
+        $('.id').val(id);
+        $('.tanggal').val(tanggal);
+        $('.jenispengeluaran').val(jenispengeluaran);
+        $('.keterangan').val(ket);
+        $('.jumlah').val(jumlah);
+        $('#updateModal').modal('show');
+    });
+
     $('#datatable').DataTable({
         responsive: true
     });
