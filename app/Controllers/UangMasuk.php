@@ -25,8 +25,6 @@ class UangMasuk extends BaseController
             'jumlah' => $this->request->getPost('jumlah')
         );
         $model->saveCashIn($data);
-        session()->setFlashdata('pesan', 'Data berhasil disimpan.');
-        return redirect()->to('/uangmasuk');
     }
 
     public function update()
@@ -40,8 +38,6 @@ class UangMasuk extends BaseController
             'jumlah' => $this->request->getPost('jumlah')
         );
         $model->updateCashIn($data, $id);
-        session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-        return redirect()->to('/uangmasuk');
     }
 
     public function delete()
@@ -49,7 +45,14 @@ class UangMasuk extends BaseController
         $model = new UangMasuk_model();
         $id = $this->request->getPost('id');
         $model->deleteCashIn($id);
-        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-        return redirect()->to('/uangmasuk');
+    }
+
+    public function table_uang_masuk()
+    {
+        $model = new UangMasuk_model();
+        $model1 = new JenisPemasukan_model();
+        $data['cashin'] = $model->getCashIn();
+        $data['jenispemasukan'] = $model1->getJenisPemasukan()->getresultArray();
+        echo view('ajax/table_uang_masuk', $data);
     }
 }

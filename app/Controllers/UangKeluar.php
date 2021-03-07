@@ -52,4 +52,13 @@ class UangKeluar extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
         return redirect()->to('/uangkeluar');
     }
+
+    public function table_uang_keluar()
+    {
+        $model = new UangKeluar_model();
+        $model1 = new JenisPengeluaran_model();
+        $data['cashout'] = $model->getCashOut();
+        $data['jenispengeluaran'] = $model1->getJenisPengeluaran()->getresultArray();
+        echo view('ajax/table_uang_keluar', $data);
+    }
 }

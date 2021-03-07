@@ -136,7 +136,7 @@
                         <input type="text" class="form-control nohp" onkeypress="return hanyaAngka(event)" placeholder="Masukan No. Hp" id="nohp" name="nohp" required autocomplete="off">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label>Jumlah</label>
+                        <label>Jumlah *</label>
                         <input type="text" class="form-control jumlah" onkeypress="return hanyaAngka(event)" placeholder="Masukan Jumlah Uang" id="jumlah" name="jumlah" required autocomplete="off">
                     </div>
                 </div>

@@ -32,39 +32,42 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data</button>
-            <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i></a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
+            <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
+            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table id="datatable" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th width="10%">No.</th>
-                            <th>Tanggal</th>
-                            <th>Jenis</th>
-                            <th>Jumlah</th>
-                            <th>Keterangan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($cashout as $row) : $no++ ?>
+                <div class="coba" id="coba">
+                    <table id="datatable" class="table table-striped">
+                        <thead>
                             <tr>
-                                <td> <?= $no; ?></td>
-                                <td> <?= $row['tanggal']; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
-                                <td> <?= $row['keterangan']; ?></td>
-                                <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispengeluaran="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                </td>
+                                <th width="10%">No.</th>
+                                <th>Tanggal</th>
+                                <th>Jenis</th>
+                                <th>Jumlah</th>
+                                <th>Keterangan</th>
+                                <th>Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php $no = 0;
+                            foreach ($cashout as $row) : $no++ ?>
+                                <tr>
+                                    <td> <?= $no; ?></td>
+                                    <td> <?= $row['tanggal']; ?></td>
+                                    <td> <?= $row['nama']; ?></td>
+                                    <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+                                    <td> <?= $row['keterangan']; ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispengeluaran="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                        <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

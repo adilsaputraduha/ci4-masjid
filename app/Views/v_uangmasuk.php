@@ -32,45 +32,48 @@
 <div class="col-xl-12">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data</button>
-            <a href="/carstype/exportPdf" class="btn btn-success float-right pdf" target="_blank"><i class="icofont icofont-print"></i></a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
+            <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
+            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
-                <table id="datatable" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th width="8%">No.</th>
-                            <th>Tanggal</th>
-                            <th>Jenis</th>
-                            <th>Jumlah</th>
-                            <th>Keterangan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($cashin as $row) : $no++ ?>
+                <div class="coba" id="coba">
+                    <table id="datatable" class="table table-striped">
+                        <thead>
                             <tr>
-                                <td width="8%"> <?= $no; ?></td>
-                                <td> <?= $row['tanggal']; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
-                                <td> <?= $row['keterangan']; ?></td>
-                                <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispemasukan="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                </td>
+                                <th width="8%">No.</th>
+                                <th>Tanggal</th>
+                                <th>Jenis</th>
+                                <th>Jumlah</th>
+                                <th>Keterangan</th>
+                                <th>Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php $no = 0;
+                            foreach ($cashin as $row) : $no++ ?>
+                                <tr>
+                                    <td width="8%"> <?= $no; ?></td>
+                                    <td> <?= $row['tanggal']; ?></td>
+                                    <td> <?= $row['nama']; ?></td>
+                                    <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+                                    <td> <?= $row['keterangan']; ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['id']; ?>" data-tanggal="<?= $row['tanggal']; ?>" data-jenispemasukan="<?= $row['idp']; ?>" data-keterangan="<?= $row['keterangan']; ?>" data-jumlah="<?= $row['jumlah']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                        <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['id']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<form method="POST" action="/uangmasuk/save" enctype="">
+<form id="form_tambah">
     <?= csrf_field(); ?>
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -105,14 +108,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Simpan</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="simpan()">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="/uangmasuk/update" enctype="">
+<form id="form_edit">
     <?= csrf_field(); ?>
     <div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -148,14 +151,14 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Edit</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="edit()">Edit</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
 
-<form method="POST" action="/uangmasuk/delete" enctype="">
+<form id="form_delete">
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -175,7 +178,7 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <button type="button" class="btn btn-secondary mt-2 mb-2" data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-primary mt-2 mb-2 mr-2">Yakin</button>
+                    <button type="button" class="btn btn-primary mt-2 mb-2 mr-2" onclick="hapus()">Yakin</button>
                 </div>
             </div>
         </div>
@@ -208,6 +211,74 @@
         if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
             return false;
         return true;
+    }
+
+    function reload_table() {
+        $.ajax({
+            url: "<?= base_url('uangmasuk/table_uang_masuk'); ?>",
+            beforeSend: function(f) {
+                $('#coba').html(`<div class="text-center">
+                Mencari data...
+                </div>`);
+            },
+            success: function(data) {
+                $('#coba').html(data);
+            }
+        })
+    }
+
+    function simpan() {
+        $.ajax({
+            url: "<?= base_url('uangmasuk/save'); ?>",
+            type: "POST",
+            data: $("#form_tambah").serialize(),
+            success: function(data) {
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil disimpan.",
+                    icon: "success",
+                    button: "Ok",
+                });
+                $('#addModal').modal('hide');
+                reload_table();
+            }
+        });
+    }
+
+    function edit() {
+        $.ajax({
+            url: "<?= base_url('uangmasuk/update'); ?>",
+            type: "POST",
+            data: $("#form_edit").serialize(),
+            success: function(data) {
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil diedit.",
+                    icon: "success",
+                    button: "Ok",
+                });
+                $('#updateModal').modal('hide');
+                reload_table();
+            }
+        });
+    }
+
+    function hapus() {
+        $.ajax({
+            url: "<?= base_url('uangmasuk/delete'); ?>",
+            type: "POST",
+            data: $("#form_delete").serialize(),
+            success: function(data) {
+                swal({
+                    title: "Berhasil",
+                    text: "Data berhasil dihapus.",
+                    icon: "success",
+                    button: "Ok",
+                });
+                $('#deleteModal').modal('hide');
+                reload_table();
+            }
+        });
     }
 </script>
 <?= $this->endSection(); ?>
