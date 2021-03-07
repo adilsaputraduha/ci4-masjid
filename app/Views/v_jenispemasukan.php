@@ -170,26 +170,26 @@
         return true;
     }
 
-    function reload_table(){
+    function reload_table() {
         $.ajax({
-            url:"<?= base_url('jenispemasukan/table_jenispemasukan'); ?>",
-            beforeSend: function(f){
+            url: "<?= base_url('jenispemasukan/table_jenispemasukan'); ?>",
+            beforeSend: function(f) {
                 $('#coba').html(`<div class="text-center">
                 Mencari data...
                 </div>`);
             },
-            success: function(data){
+            success: function(data) {
                 $('#coba').html(data);
             }
         })
     }
 
-    function simpan(){
+    function simpan() {
         $.ajax({
-            url:"<?= base_url('jenispemasukan/save'); ?>",
+            url: "<?= base_url('jenispemasukan/save'); ?>",
             type: "POST",
             data: $("#form_tambah").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil disimpan.",
@@ -197,17 +197,18 @@
                     button: "Ok",
                 });
                 $('#addModal').modal('hide');
+                $('#nama').val('');
                 reload_table();
             }
         });
     }
 
-    function edit(){
+    function edit() {
         $.ajax({
-            url:"<?= base_url('jenispemasukan/update'); ?>",
+            url: "<?= base_url('jenispemasukan/update'); ?>",
             type: "POST",
             data: $("#form_edit").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil diedit.",
@@ -220,12 +221,12 @@
         });
     }
 
-    function hapus(){
+    function hapus() {
         $.ajax({
-            url:"<?= base_url('jenispemasukan/delete'); ?>",
+            url: "<?= base_url('jenispemasukan/delete'); ?>",
             type: "POST",
             data: $("#form_delete").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil dihapus.",

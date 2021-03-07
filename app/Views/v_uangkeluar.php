@@ -240,7 +240,8 @@
                     button: "Ok",
                 });
                 $('#addModal').modal('hide');
-                $('#nama').val('');
+                $('#keterangan').val('');
+                $('#jumlah').val('');
                 reload_table();
             }
         });

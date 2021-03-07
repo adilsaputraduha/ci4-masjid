@@ -233,6 +233,10 @@
                     button: "Ok",
                 });
                 $('#addModal').modal('hide');
+                $('#nama').val('');
+                $('#alamat').val('');
+                $('#nohp').val('');
+                $('#jumlah').val('');
                 reload_table();
             }
         });
