@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Donatur</title>
+    <title>Laporan Data Uang Masuk</title>
 
     <style>
         table {
             font-family: sans-serif;
             color: #444;
             width: 100%;
-            /* border: 1px solid #f2f5f7; */
+            border: 1px solid #f2f5f7;
         }
 
         table tr th {
+            background: #f5f5f5;
+        }
+
+        .total {
             background: #f5f5f5;
         }
 
@@ -42,27 +46,33 @@
     <h3 style="margin-bottom: -0.5rem;">Masjid Al-Hikmah</h3>
     <h4>Komp. Perumahan Parupuk Raya Blok H.6</h4>
     <hr>
-    <h4>Laporan Data Donatur</h4>
+    <h4>Laporan Data Uang Masuk</h4>
 </div>
 <table>
     <thead>
         <tr>
             <th>No.</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>No. Hp</th>
+            <th>Tanggal</th>
+            <th>Jenis</th>
+            <th>Keterangan</th>
             <th>Jumlah</th>
         </tr>
     </thead>
     <tbody>
         <?php $no = 0;
-        foreach ($donatur as $row) : $no++ ?>
+        foreach ($cashin as $row) : $no++ ?>
             <tr>
-                <td> <?= $no; ?></td>
+                <td width="8%"> <?= $no; ?></td>
+                <td> <?= $row['tanggal']; ?></td>
                 <td> <?= $row['nama']; ?></td>
-                <td> <?= $row['alamat']; ?></td>
-                <td> <?= $row['nohp']; ?></td>
+                <td> <?= $row['keterangan']; ?></td>
                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <?php foreach ($total as $row) : ?>
+            <tr class="total">
+                <td colspan="4"><b>Total</b></td>
+                <td><b><?= "Rp. " . number_format($row['total']); ?></b></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

@@ -31,6 +31,8 @@ class PembayaranDonatur extends BaseController
 
     public function savedetail()
     {
+        $jenis = 1;
+        $keterangan = "Donatur Tetap";
         $model = new PembayaranDonatur_model();
         $id = $this->request->getPost('id');
         $data = array(
@@ -39,21 +41,16 @@ class PembayaranDonatur extends BaseController
             'bulan' => $this->request->getPost('bulan'),
             'jumlah' => $this->request->getPost('jumlah')
         );
+        $data1 = array(
+            'tanggal' => $this->request->getPost('tanggal'),
+            'jenis' => $jenis,
+            'keterangan' => $keterangan,
+            'jumlah' => $this->request->getPost('jumlah')
+        );
         $model->savePembayaranDonatur($data);
+        $model->saveUangMasuk($data1);
         return redirect()->to('/pembayarandonatur/tambah/' . $id);
     }
-
-    // public function update()
-    // {
-    //     $model = new PembayaranDonatur_model();
-    //     $id = $this->request->getPost('id');
-    //     $data = array(
-    //         'nama' => $this->request->getPost('nama')
-    //     );
-    //     $model->updatePembayaranDonatur($data, $id);
-    //     session()->setFlashdata('pesan', 'Data berhasil diupdate.');
-    //     return redirect()->to('/pembayarandonatur');
-    // }
 
     public function deletedetail($id, $bulan)
     {

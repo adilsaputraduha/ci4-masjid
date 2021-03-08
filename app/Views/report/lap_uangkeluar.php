@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Donatur</title>
+    <title>Laporan Data Uang Keluar</title>
 
     <style>
         table {
@@ -42,27 +42,27 @@
     <h3 style="margin-bottom: -0.5rem;">Masjid Al-Hikmah</h3>
     <h4>Komp. Perumahan Parupuk Raya Blok H.6</h4>
     <hr>
-    <h4>Laporan Data Donatur</h4>
+    <h4>Laporan Data Uang Keluar</h4>
 </div>
 <table>
     <thead>
         <tr>
-            <th>No.</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>No. Hp</th>
+            <th width="10%">No.</th>
+            <th>Tanggal</th>
+            <th>Jenis</th>
             <th>Jumlah</th>
+            <th>Keterangan</th>
         </tr>
     </thead>
     <tbody>
         <?php $no = 0;
-        foreach ($donatur as $row) : $no++ ?>
+        foreach ($cashout as $row) : $no++ ?>
             <tr>
                 <td> <?= $no; ?></td>
+                <td> <?= $row['tanggal']; ?></td>
                 <td> <?= $row['nama']; ?></td>
-                <td> <?= $row['alamat']; ?></td>
-                <td> <?= $row['nohp']; ?></td>
                 <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+                <td> <?= $row['keterangan']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

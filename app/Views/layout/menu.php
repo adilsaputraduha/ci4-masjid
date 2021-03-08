@@ -26,11 +26,10 @@
         </ul>
     </li>
     <li class="nav-item pcoded-hasmenu">
-        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="icofont icofont-tasks"></i></span><span class="pcoded-mtext">Laporan</span></a>
+        <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="icofont icofont-notebook"></i></span><span class="pcoded-mtext">Laporan</span></a>
         <ul class="pcoded-submenu">
-            <li><a href="#">Laporan Keuangan</a></li>
-            <li><a href="/uangmasuk">Uang Masuk</a></li>
-            <li><a href="/uangkeluar">Uang Keluar</a></li>
+            <li><a href="uangmasuk/reportfilter">Lap Uang Masuk</a></li>
+            <li><a href="uangkeluar/reportfilter">Lap Uang Keluar</a></li>
         </ul>
     </li>
 

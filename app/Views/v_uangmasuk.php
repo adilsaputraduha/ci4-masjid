@@ -34,12 +34,15 @@
         <div class="card-header">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
             <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
-            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
+            <a href="/uangmasuk/report" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <div class="coba" id="coba">
-                    <table id="datatable" class="table table-striped">
+                    <div class="text-right mr-5 mb-3">
+                        <h5 class="">Total : <?php foreach ($total as $row) : ?><?= "Rp. " . number_format($row['total']); ?><?php endforeach; ?></h5>
+                    </div>
+                    <table id="datatable" class="table table-striped mt-3">
                         <thead>
                             <tr>
                                 <th width="8%">No.</th>

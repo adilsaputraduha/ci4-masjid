@@ -13,6 +13,10 @@ class UangMasuk extends BaseController
         $model1 = new JenisPemasukan_model();
         $data['cashin'] = $model->getCashIn();
         $data['jenispemasukan'] = $model1->getJenisPemasukan()->getresultArray();
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_in");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
         echo view('v_uangmasuk', $data);
     }
     public function save()
@@ -53,6 +57,23 @@ class UangMasuk extends BaseController
         $model1 = new JenisPemasukan_model();
         $data['cashin'] = $model->getCashIn();
         $data['jenispemasukan'] = $model1->getJenisPemasukan()->getresultArray();
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_in");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
         echo view('ajax/table_uang_masuk', $data);
+    }
+
+    public function report()
+    {
+        $model = new UangMasuk_model();
+        $model1 = new JenisPemasukan_model();
+        $data['cashin'] = $model->getCashIn();
+        $data['jenispemasukan'] = $model1->getJenisPemasukan()->getresultArray();
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_in");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
+        echo view('report/lap_uangmasuk', $data);
     }
 }

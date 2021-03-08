@@ -17,11 +17,12 @@ class PembayaranDonatur_model extends Model
         $query = $this->db->table('pembayaran_donatur')->insert($data);
         return $query;
     }
-    // public function updatePembayaranDonatur($data, $id)
-    // {
-    //     $query = $this->db->table('pembayaran_donatur')->update($data, array('id' => $id));
-    //     return $query;
-    // }
+    // Save Uang Masuk
+    public function saveUangMasuk($data1)
+    {
+        $query = $this->db->table('cash_in')->insert($data1);
+        return $query;
+    }
     public function deletePembayaranDonatur($id, $bulan)
     {
         $query = $this->db->table('pembayaran_donatur')->delete(array('donatur' => $id, 'bulan' => $bulan));
