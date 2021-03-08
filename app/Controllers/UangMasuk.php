@@ -9,10 +9,17 @@ class UangMasuk extends BaseController
 {
     public function index()
     {
-        $model = new UangMasuk_model();
-        $model1 = new JenisPemasukan_model();
-        $data['cashin'] = $model->getCashIn();
-        $data['jenispemasukan'] = $model1->getJenisPemasukan()->getresultArray();
+        // Ambil data uang masuk kecuali donatur
+        $db2 = \Config\Database::connect();
+        $b = $db2->query("SELECT id, tanggal, jenis, keterangan, jumlah, idp, nama FROM cash_in JOIN jenis_pemasukan ON idp = jenis WHERE jenis != '1'");
+        $row2 = $b->getResultArray();
+        $data['cashin'] = $row2;
+        // Selain jenis donatur
+        $db1 = \Config\Database::connect();
+        $a = $db1->query("SELECT * FROM jenis_pemasukan WHERE idp !='1'");
+        $row1 = $a->getResultArray();
+        $data['jenispemasukan'] = $row1;
+        // Query menampilkan total
         $db = \Config\Database::connect();
         $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_in");
         $row = $bulan->getResultArray();

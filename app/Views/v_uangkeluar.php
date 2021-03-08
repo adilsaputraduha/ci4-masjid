@@ -39,6 +39,9 @@
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <div class="coba" id="coba">
+                    <div class="text-right mr-5 mb-3">
+                        <h5 class="">Total : <?php foreach ($total as $row) : ?><?= "Rp. " . number_format($row['total']); ?><?php endforeach; ?></h5>
+                    </div>
                     <table id="datatable" class="table table-striped">
                         <thead>
                             <tr>

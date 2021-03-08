@@ -13,6 +13,11 @@ class UangKeluar extends BaseController
         $model1 = new JenisPengeluaran_model();
         $data['cashout'] = $model->getCashOut();
         $data['jenispengeluaran'] = $model1->getJenisPengeluaran()->getresultArray();
+        // Query menampilkan total
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_out");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
         echo view('v_uangkeluar', $data);
     }
     public function save()
@@ -59,6 +64,11 @@ class UangKeluar extends BaseController
         $model1 = new JenisPengeluaran_model();
         $data['cashout'] = $model->getCashOut();
         $data['jenispengeluaran'] = $model1->getJenisPengeluaran()->getresultArray();
+        // Query menampilkan total
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_out");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
         echo view('ajax/table_uang_keluar', $data);
     }
 
@@ -68,6 +78,11 @@ class UangKeluar extends BaseController
         $model1 = new JenisPengeluaran_model();
         $data['cashout'] = $model->getCashOut();
         $data['jenispengeluaran'] = $model1->getJenisPengeluaran()->getresultArray();
+        // Query menampilkan total
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT id, tanggal, jenis, keterangan, jumlah, SUM(jumlah) AS total FROM cash_out");
+        $row = $bulan->getResultArray();
+        $data['total'] = $row;
         echo view('report/lap_uangkeluar', $data);
     }
 }

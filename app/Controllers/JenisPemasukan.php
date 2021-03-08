@@ -8,8 +8,10 @@ class JenisPemasukan extends BaseController
 {
     public function index()
     {
-        $model = new JenisPemasukan_model();
-        $data['jenispemasukan'] = $model->getJenisPemasukan()->getresultArray();
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT * FROM jenis_pemasukan WHERE idp !='1'");
+        $row = $bulan->getResultArray();
+        $data['jenispemasukan'] = $row;
         echo view('v_jenispemasukan', $data);
     }
     public function save()
@@ -40,8 +42,10 @@ class JenisPemasukan extends BaseController
 
     public function table_jenispemasukan()
     {
-        $model = new JenisPemasukan_model();
-        $data['jenispemasukan'] = $model->getJenisPemasukan()->getresultArray();
+        $db = \Config\Database::connect();
+        $bulan = $db->query("SELECT * FROM jenis_pemasukan WHERE idp !='1'");
+        $row = $bulan->getResultArray();
+        $data['jenispemasukan'] = $row;
         echo view('ajax/table_jenis_pemasukan', $data);
     }
 

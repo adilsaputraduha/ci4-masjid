@@ -12,10 +12,14 @@
             font-family: sans-serif;
             color: #444;
             width: 100%;
-            /* border: 1px solid #f2f5f7; */
+            border: 1px solid #f2f5f7;
         }
 
         table tr th {
+            background: #f5f5f5;
+        }
+
+        .total {
             background: #f5f5f5;
         }
 
@@ -61,8 +65,14 @@
                 <td> <?= $no; ?></td>
                 <td> <?= $row['tanggal']; ?></td>
                 <td> <?= $row['nama']; ?></td>
-                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
                 <td> <?= $row['keterangan']; ?></td>
+                <td> <?= "Rp. " . number_format($row['jumlah']); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <?php foreach ($total as $row) : ?>
+            <tr class="total">
+                <td colspan="4"><b>Total</b></td>
+                <td><b><?= "Rp. " . number_format($row['total']); ?></b></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

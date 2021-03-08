@@ -12,7 +12,7 @@
             font-family: sans-serif;
             color: #444;
             width: 100%;
-            /* border: 1px solid #f2f5f7; */
+            border: 1px solid #f2f5f7;
         }
 
         table tr th {
