@@ -37,11 +37,18 @@ class JenisPemasukan extends BaseController
         $id = $this->request->getPost('id');
         $model->deleteJenisPemasukan($id);
     }
-    
+
     public function table_jenispemasukan()
     {
         $model = new JenisPemasukan_model();
         $data['jenispemasukan'] = $model->getJenisPemasukan()->getresultArray();
         echo view('ajax/table_jenis_pemasukan', $data);
+    }
+
+    public function report()
+    {
+        $model = new JenisPemasukan_model();
+        $data['jenispemasukan'] = $model->getJenisPemasukan()->getresultArray();
+        echo view('report/lap_jenispemasukan', $data);
     }
 }

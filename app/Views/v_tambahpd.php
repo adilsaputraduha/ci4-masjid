@@ -13,7 +13,7 @@
                 <ul class="breadcrumb float-right">
                     <li class="breadcrumb-item"><a href="/home"><i class="feather icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pembayaran Donatur</a></li>
+                    <li class="breadcrumb-item"><a href="/pembayarandonatur">Pembayaran Donatur</a></li>
                     <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                 </ul>
             </div>
@@ -27,6 +27,7 @@
         <div class="card">
             <div class="card-header">
                 <h5>Tambah Pembayaran Donatur</h5>
+                <a href="/pembayarandonatur" class="btn btn-danger btn-sm float-right"><i class="icofont icofont-hand-left"></i> Kembali</a>
             </div>
             <div class="card-body">
                 <div class="row">

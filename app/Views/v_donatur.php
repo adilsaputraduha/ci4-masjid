@@ -34,7 +34,7 @@
         <div class="card-header">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
             <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
-            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
+            <a href="/donatur/report" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">

@@ -34,33 +34,33 @@
         <div class="card-header">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal"><i class="icofont icofont-plus mr-2"></i>Tambah Data</button>
             <button class="btn btn-success" onclick="reload_table()"><i class="icofont icofont-refresh mr-2"></i>Refresh Tabel</button>
-            <a href="/carstype/exportPdf" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print mr-2"></i> Print</a>
+            <a href="/jenispengeluaran/report" class="btn btn-secondary float-right pdf" target="_blank"><i class="icofont icofont-print mr-2"></i> Print</a>
         </div>
         <div class="card-body table-border-style">
             <div class="table-responsive">
                 <div id="coba">
-                <table id="datatable" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th width="10%">No.</th>
-                            <th>Nama</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($jenispengeluaran as $row) : $no++ ?>
+                    <table id="datatable" class="table table-striped">
+                        <thead>
                             <tr>
-                                <td> <?= $no; ?></td>
-                                <td> <?= $row['nama']; ?></td>
-                                <td style="text-align: center;">
-                                    <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['idp']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
-                                    <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['idp']; ?>"><i class="icofont icofont-ui-delete"></i></a>
-                                </td>
+                                <th width="10%">No.</th>
+                                <th>Nama</th>
+                                <th>Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php $no = 0;
+                            foreach ($jenispengeluaran as $row) : $no++ ?>
+                                <tr>
+                                    <td> <?= $no; ?></td>
+                                    <td> <?= $row['nama']; ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="#" class="btn-sm btn-primary btn-update" data-id="<?= $row['idp']; ?>" data-nama="<?= $row['nama']; ?>"><i class="icofont icofont-ui-edit"></i></a>
+                                        <a href="#" class="btn-sm btn-danger btn-delete" data-id="<?= $row['idp']; ?>"><i class="icofont icofont-ui-delete"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -170,26 +170,26 @@
         return true;
     }
 
-    function reload_table(){
+    function reload_table() {
         $.ajax({
-            url:"<?= base_url('jenispengeluaran/table_jenispengeluaran'); ?>",
-            beforeSend: function(f){
+            url: "<?= base_url('jenispengeluaran/table_jenispengeluaran'); ?>",
+            beforeSend: function(f) {
                 $('#coba').html(`<div class="text-center">
                 Mencari data...
                 </div>`);
             },
-            success: function(data){
+            success: function(data) {
                 $('#coba').html(data);
             }
         })
     }
 
-    function simpan(){
+    function simpan() {
         $.ajax({
-            url:"<?= base_url('jenispengeluaran/save'); ?>",
+            url: "<?= base_url('jenispengeluaran/save'); ?>",
             type: "POST",
             data: $("#form_tambah").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil disimpan.",
@@ -203,12 +203,12 @@
         });
     }
 
-    function edit(){
+    function edit() {
         $.ajax({
-            url:"<?= base_url('jenispengeluaran/update'); ?>",
+            url: "<?= base_url('jenispengeluaran/update'); ?>",
             type: "POST",
             data: $("#form_edit").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil diedit.",
@@ -221,12 +221,12 @@
         });
     }
 
-    function hapus(){
+    function hapus() {
         $.ajax({
-            url:"<?= base_url('jenispengeluaran/delete'); ?>",
+            url: "<?= base_url('jenispengeluaran/delete'); ?>",
             type: "POST",
             data: $("#form_delete").serialize(),
-            success: function(data){
+            success: function(data) {
                 swal({
                     title: "Berhasil",
                     text: "Data berhasil dihapus.",

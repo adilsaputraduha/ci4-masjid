@@ -50,4 +50,11 @@ class Donatur extends BaseController
         $data['donatur'] = $model->getDonatur()->getresultArray();
         echo view('ajax/table_donatur', $data);
     }
+
+    public function report()
+    {
+        $model = new Donatur_model();
+        $data['donatur'] = $model->getDonatur()->getresultArray();
+        echo view('report/lap_donatur', $data);
+    }
 }

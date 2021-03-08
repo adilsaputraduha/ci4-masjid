@@ -47,4 +47,11 @@ class JenisPengeluaran extends BaseController
         $data['jenispengeluaran'] = $model->getJenisPengeluaran()->getresultArray();
         echo view('ajax/table_jenis_pengeluaran', $data);
     }
+
+    public function report()
+    {
+        $model = new JenisPengeluaran_model();
+        $data['jenispengeluaran'] = $model->getJenisPengeluaran()->getresultArray();
+        echo view('report/lap_jenispengeluaran', $data);
+    }
 }
